@@ -1,0 +1,8 @@
+# Ignore generated files
+scalp_user_design.xsa
+scalp_user_design.bit
+drivers
+*.c
+*.h
+*.tcl
+*.html

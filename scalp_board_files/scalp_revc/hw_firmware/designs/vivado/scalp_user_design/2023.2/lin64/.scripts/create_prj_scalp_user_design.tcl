@@ -1,0 +1,243 @@
+##################################################################################
+#                                 _             _
+#                                | |_  ___ _ __(_)__ _
+#                                | ' \/ -_) '_ \ / _` |
+#                                |_||_\___| .__/_\__,_|
+#                                         |_|
+#
+##################################################################################
+#
+# Company: hepia - HES-SO
+# Author: Joachim Schmidt <joachim.schmidt@hesge.ch>
+#
+# Project Name: scalp_user_design
+# Target Device: hepia-cores.ch:scalp_node:part0:0.2 xc7z015clg485-2
+# Tool version: 2023.2
+# Description: TCL script for re-creating Vivado project 'scalp_user_design'
+#
+# Last update: 2024-03-26 08:26:57
+#
+##################################################################################
+
+# Include files
+source utils.tcl
+
+set PRJ_DIR ".."
+set prj_name "scalp_user_design"
+set PKG_DIR "${PRJ_DIR}/../../../../../packages"
+set SOC_DIR "${PRJ_DIR}/../../../../../soc/"
+
+# Set project type
+set PRJ_TYPE "DESIGN_PRJ_TYPE"
+
+# Create a variable to store the start time
+set start_time [clock format [clock seconds] -format {%b. %d, %Y %I:%M:%S %p}]
+
+# Set the original project directory path for adding/importing sources in the new project
+set src_dir "${PRJ_DIR}/../src"
+set ip_dir "${PRJ_DIR}/../../../../../ips/hw"
+set ip_dir2 "${PRJ_DIR}/../../../../../ips"
+set periph_dir "${PRJ_DIR}/../../../../../peripherals/hw"
+set comp_dir "../../../../../../ips/hw/${prj_name}"
+set comp_src_dir "${comp_dir}/src"
+set pkg_src_dir "${PKG_DIR}/hw"
+set soc_src_dir "${SOC_DIR}/hw"
+print_status "Set directory paths" "OK"
+
+# Create the project
+create_project $prj_name ${PRJ_DIR}/$prj_name -part xc7z015clg485-2
+set_property board_part hepia-cores.ch:scalp_node:part0:0.2 [current_project]
+set_property board_connections {} [current_project]
+set_property target_language VHDL [current_project]
+
+# Setup extensible platform
+set_property platform.extensible true [current_project]
+set_property -name "platform.name" -value "${prj_name}_platform" -objects [current_project]
+set_property -name "platform.board_id" -value "scalp_ext_pfm" -objects [current_project]
+
+print_status "Create project" "OK"
+
+# Map the IP Repository so that custom IP is included
+set_property ip_repo_paths [list $ip_dir $ip_dir2 $periph_dir] [current_fileset]
+update_ip_catalog
+
+#----------------------------------------------------------------
+# Add project sources
+#----------------------------------------------------------------
+
+# Get HDL source files directory
+if {$PRJ_TYPE == "DESIGN_PRJ_TYPE"} {
+    set hdl_src_dir "${src_dir}/hdl"
+    set sim_src_dir "${src_dir}/sim"
+} elseif {$PRJ_TYPE == "COMP_PRJ_TYPE"} {
+    # components sources are stored in an external directory
+    set hdl_src_dir "${comp_src_dir}/hdl"
+    set sim_src_dir "${comp_src_dir}/sim"
+}
+
+# add HDL source files
+set vhdl_src_file_list [findFiles $hdl_src_dir *.vhd]
+set verilog_src_file_list [findFiles $hdl_src_dir *.v]
+set system_verilog_src_file_list [findFiles $hdl_src_dir *.sv]
+set hdl_src_file_list [list {*}$vhdl_src_file_list {*}$verilog_src_file_list {*}$system_verilog_src_file_list]
+
+if {$hdl_src_file_list != ""} {
+  add_files -norecurse $hdl_src_file_list
+} else {
+  print_status "No sources to be added" "WARNING"
+}
+
+# Set VHDL version
+foreach j $vhdl_src_file_list {
+  set_property file_type {VHDL 2008} [get_files $j]
+  print_status "VHDL 2008 mode configured for the file $j" "OK"
+}
+print_status "VHDL 2008 mode configured for project sources" "OK"
+
+# Add constraint files and IPs source files
+if {$PRJ_TYPE == "DESIGN_PRJ_TYPE"} {
+  # add the constraints file (XDC)
+  add_files -fileset constrs_1 -norecurse $src_dir/constrs/scalp_firmware.xdc
+	set_property is_enabled true [get_files $src_dir/constrs/scalp_firmware.xdc]
+	add_files -fileset constrs_1 -norecurse $src_dir/constrs/debug.xdc
+	set_property is_enabled true [get_files $src_dir/constrs/debug.xdc]
+	add_files -fileset constrs_1 -norecurse $src_dir/constrs/ibert_constraints.xdc
+	set_property is_enabled false [get_files $src_dir/constrs/ibert_constraints.xdc]
+	add_files -fileset constrs_1 -norecurse $src_dir/constrs/timing_constraints.xdc
+	set_property is_enabled true [get_files $src_dir/constrs/timing_constraints.xdc]
+	add_files -fileset constrs_1 -norecurse $src_dir/constrs/pblock.xdc
+	set_property is_enabled false [get_files $src_dir/constrs/pblock.xdc]
+
+  # add IPs source files
+  set vhdl_ips_file_list [findFiles ${ip_dir}/scalp_firmwareid/src/hdl *.vhd]
+	add_files -norecurse $vhdl_ips_file_list
+	foreach j $vhdl_ips_file_list {
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+		set_property is_enabled true [get_files $j]
+	}
+set vhdl_ips_file_list [findFiles ${ip_dir}/scalp_cplx_num_regs/src/hdl *.vhd]
+	add_files -norecurse $vhdl_ips_file_list
+	foreach j $vhdl_ips_file_list {
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+		set_property is_enabled true [get_files $j]
+	}
+set vhdl_ips_file_list [findFiles ${ip_dir}/scalp_pwm/src/hdl *.vhd]
+	add_files -norecurse $vhdl_ips_file_list
+	foreach j $vhdl_ips_file_list {
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+		set_property is_enabled true [get_files $j]
+	}
+set vhdl_ips_file_list [findFiles ${ip_dir}/scalp_hdmi/src/hdl *.vhd]
+	add_files -norecurse $vhdl_ips_file_list
+	foreach j $vhdl_ips_file_list {
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+		set_property is_enabled true [get_files $j]
+	}
+set vhdl_ips_file_list [findFiles ${ip_dir}/scalp_cdc_sync/src/hdl *.vhd]
+	add_files -norecurse $vhdl_ips_file_list
+	foreach j $vhdl_ips_file_list {
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+		set_property is_enabled true [get_files $j]
+	}
+
+} elseif {$PRJ_TYPE == "COMP_PRJ_TYPE"} {
+  # add IPs source files
+
+  # add IP-XACT source file
+  #add_files -norecurse $comp_dir/component.xml
+}
+print_status "Add project sources" "OK"
+
+# Set packages libraries if any
+#set_property library library_name [get_files  $src_dir/hdl/package_name.vhd]
+#update_compile_order -fileset sources_1
+
+# Create the IP Integrator portion of the design
+#create_bd_design "axi_design"
+#update_compile_order -fileset sources_1
+
+# Launch the TCL script to generate the IPI design
+if {$PRJ_TYPE == "DESIGN_PRJ_TYPE"} {
+  source $src_dir/ipi_tcl/${prj_name}_ipi.tcl
+
+  # If the platform is an extensible platform, launch the extensible platform script
+  if {[get_property platform.extensible [current_project]] == 1} {
+    source $src_dir/ipi_tcl/ext_pfm_${prj_name}.tcl
+  }
+
+} elseif {$PRJ_TYPE == "COMP_PRJ_TYPE"} {
+  source $comp_src_dir/ipi_tcl/${prj_name}_ipi.tcl
+}
+print_status "Add IPI design" "OK"
+
+# Set the top level design
+set_property top $prj_name [current_fileset]
+update_compile_order -fileset sources_1
+
+# Add packages sources
+	set vhdl_pkg_file_list [findFiles ${PRJ_DIR}/../../../../../packages/hw/scalp_axi_pkg/src/hdl *.vhd]
+	add_files -norecurse $vhdl_pkg_file_list
+	foreach j $vhdl_pkg_file_list {
+		set_property is_enabled true [get_files $j]
+		set_property library scalp_lib [get_files $j]
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+	}
+	set vhdl_pkg_file_list [findFiles ${PRJ_DIR}/../../../../../packages/hw/scalp_hdmi_pkg/src/hdl *.vhd]
+	add_files -norecurse $vhdl_pkg_file_list
+	foreach j $vhdl_pkg_file_list {
+		set_property is_enabled true [get_files $j]
+		set_property library scalp_lib [get_files $j]
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+	}
+print_status "Add packages sources" "OK"
+print_status "VHDL 2008 mode configured for packages sources" "OK"
+
+# Add SoC wrapper sources files
+	set vhdl_soc_file_list [findFiles ${PRJ_DIR}/../../../../../soc/hw/scalp_zynqps_user/src/hdl *.vhd]
+	add_files -norecurse $vhdl_soc_file_list
+	foreach j $vhdl_soc_file_list {
+		set_property file_type {VHDL 2008} [get_files $j]
+		print_status "VHDL 2008 mode configured for the file $j" "OK"
+		set_property is_enabled true [get_files $j]
+	}
+print_status "Add SoC wrapper sources" "OK"
+print_status "VHDL 2008 mode configured for SoC wrapper sources" "OK"
+
+# Add simulation sources
+set vhdl_sim_file_list [findFiles $sim_src_dir *.vhd]
+set verilog_sim_file_list [findFiles $sim_src_dir *.v]
+set system_verilog_sim_file_list [findFiles $sim_src_dir *.sv]
+set hdl_sim_file_list [list {*}$vhdl_sim_file_list {*}$verilog_sim_file_list {*}$system_verilog_sim_file_list]
+
+if {$hdl_sim_file_list != ""} {
+  add_files -fileset sim_1 -norecurse $hdl_sim_file_list
+  update_compile_order -fileset sim_1
+  print_status "Add simulation sources" "OK"
+} else {
+  print_status "No simulation sources to be added" "WARNING"
+}
+
+foreach j $vhdl_sim_file_list {
+  set_property file_type {VHDL 2008} [get_files $j]
+  print_status "VHDL 2008 mode configured for the file $j" "OK"
+}
+print_status "VHDL 2008 mode configured for simulation sources" "OK"
+
+# Add simulation packages sources
+
+
+# Set the completion time
+set end_time [clock format [clock seconds] -format {%b. %d, %Y %I:%M:%S %p}]
+
+# Display the start and end time to the screen
+puts $start_time
+puts $end_time
+
+exit

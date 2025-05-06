@@ -1,0 +1,108 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.751781",
+   "Default View_TopLeft":"-552,3",
+   "ExpandedHierarchyInLayout":"",
+   "comment_0":"According to screen resolution, 
+the clock frequencies can be 
+modified. ",
+   "commentid":"comment_0|",
+   "font_comment_0":"14",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 4 -x 1490 -y 1350 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 4 -x 1490 -y 1370 -defaultsOSRD
+preplace port aximm_mst_firmwareid_if -pg 1 -lvl 4 -x 1490 -y 1470 -defaultsOSRD
+preplace port GPIOSwitchesxDI -pg 1 -lvl 4 -x 1490 -y 750 -defaultsOSRD
+preplace port GPIOResetBtnxDO -pg 1 -lvl 4 -x 1490 -y 620 -defaultsOSRD
+preplace port aximm_mst_clpx_num_regs_if -pg 1 -lvl 4 -x 1490 -y 1240 -defaultsOSRD
+preplace port IoExtIICxDIO -pg 1 -lvl 4 -x 1490 -y 440 -defaultsOSRD
+preplace port GPIOJoystickxDI -pg 1 -lvl 4 -x 1490 -y 310 -defaultsOSRD
+preplace port port-id_Spi1MOSIxSO -pg 1 -lvl 4 -x 1490 -y 1410 -defaultsOSRD
+preplace port port-id_Spi1SSxSO -pg 1 -lvl 4 -x 1490 -y 1580 -defaultsOSRD
+preplace port port-id_Spi1SclkxCO -pg 1 -lvl 4 -x 1490 -y 1390 -defaultsOSRD
+preplace port port-id_Usb0VBusPwrFaultxSI -pg 1 -lvl 0 -x 0 -y 1290 -defaultsOSRD
+preplace port port-id_SAxiMstFirmwareIdClkxCO -pg 1 -lvl 4 -x 1490 -y 1490 -defaultsOSRD
+preplace port port-id_SAxiMstFirmwareIdRstxRANO -pg 1 -lvl 4 -x 1490 -y 1510 -defaultsOSRD
+preplace port port-id_ClkVgaxCO -pg 1 -lvl 4 -x 1490 -y 160 -defaultsOSRD
+preplace port port-id_ClkHdmixCO -pg 1 -lvl 4 -x 1490 -y 100 -defaultsOSRD
+preplace port port-id_Clk125PllLockedxS -pg 1 -lvl 4 -x 1490 -y 1430 -defaultsOSRD
+preplace port port-id_Clk125xCO -pg 1 -lvl 4 -x 1490 -y 1560 -defaultsOSRD
+preplace port port-id_SAxiMstCplxNumRegsClkxCO -pg 1 -lvl 4 -x 1490 -y 1260 -defaultsOSRD
+preplace port port-id_SAxiMstCplxNumRegsRstxRANO -pg 1 -lvl 4 -x 1490 -y 1280 -defaultsOSRD
+preplace port port-id_VgaHdmiClkPllLockedxSO -pg 1 -lvl 4 -x 1490 -y 180 -defaultsOSRD
+preplace portBus Clk125RstxRNAO -pg 1 -lvl 4 -x 1490 -y 1180 -defaultsOSRD
+preplace portBus Clk125RstxRO -pg 1 -lvl 4 -x 1490 -y 1330 -defaultsOSRD
+preplace portBus ClkVgaRstxRO -pg 1 -lvl 4 -x 1490 -y 140 -defaultsOSRD
+preplace portBus ClkVgaRstxRNAO -pg 1 -lvl 4 -x 1490 -y 120 -defaultsOSRD
+preplace portBus ClkHdmiRstxRO -pg 1 -lvl 4 -x 1490 -y 80 -defaultsOSRD
+preplace portBus ClkHdmiRstxRNAO -pg 1 -lvl 4 -x 1490 -y 60 -defaultsOSRD
+preplace inst gnd_constant -pg 1 -lvl 1 -x 260 -y 1230 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 260 -y 1490 -defaultsOSRD
+preplace inst scalp_axi_link_firmwareid -pg 1 -lvl 3 -x 1260 -y 1490 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 780 -y 860 -defaultsOSRD
+preplace inst axi_gpio_switches -pg 1 -lvl 3 -x 1260 -y 760 -defaultsOSRD
+preplace inst axi_intc_0 -pg 1 -lvl 3 -x 1260 -y 930 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 780 -y 540 -defaultsOSRD
+preplace inst axi_gpio_reset_btn -pg 1 -lvl 3 -x 1260 -y 620 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 3 -x 1260 -y 1100 -defaultsOSRD
+preplace inst scalp_axi_link_cplx_num_regs -pg 1 -lvl 3 -x 1260 -y 1260 -defaultsOSRD
+preplace inst vga_hdmi_clk_rst_sys_0 -pg 1 -lvl 3 -x 1260 -y 120 -defaultsOSRD
+preplace inst rst_ps7_0_125M -pg 1 -lvl 2 -x 780 -y 1240 -defaultsOSRD
+preplace inst sys_clock -pg 1 -lvl 2 -x 780 -y 1480 -defaultsOSRD
+preplace inst axi_iic_ioext -pg 1 -lvl 3 -x 1260 -y 460 -defaultsOSRD
+preplace inst axi_gpio_joystick -pg 1 -lvl 3 -x 1260 -y 320 -defaultsOSRD
+preplace netloc USB0_VBUS_PWRFAULT_0_1 1 0 2 NJ 1290 490
+preplace netloc axi_gpio_0_ip2intc_irpt 1 1 3 570 1100 1080 1020 1450
+preplace netloc axi_gpio_joystick_ip2intc_irpt 1 1 3 590 240 NJ 240 1440
+preplace netloc axi_iic_ioext_iic2intc_irpt 1 1 3 600 460 1060J 540 1440
+preplace netloc axi_intc_0_irq 1 0 4 20 1140 NJ 1140 1080 1180 1440
+preplace netloc gnd_constant_dout 1 1 1 500 1230n
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 530 130 N
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 520 110 N
+preplace netloc processing_system7_0_SPI1_MOSI_O 1 1 3 510J 1400 NJ 1400 1470J
+preplace netloc processing_system7_0_SPI1_SCLK_O 1 1 3 540J 1390 NJ 1390 NJ
+preplace netloc processing_system7_0_SPI1_SS_O 1 1 3 510J 1580 NJ 1580 NJ
+preplace netloc rst_ps7_0_125M_interconnect_aresetn 1 1 2 590 620 960
+preplace netloc rst_ps7_0_125M_peripheral_aresetn1 1 1 3 580 440 1010 1360 1460J
+preplace netloc rst_ps7_0_125M_peripheral_reset 1 2 2 980J 1340 1470J
+preplace netloc scalp_axi_link_0_SAxiMstClkxCO 1 3 1 NJ 1490
+preplace netloc scalp_axi_link_0_SAxiMstRstxRANO 1 3 1 NJ 1510
+preplace netloc scalp_axi_link_cplx_num_regs_SAxiMstClkxCO 1 3 1 NJ 1260
+preplace netloc scalp_axi_link_cplx_num_regs_SAxiMstRstxRANO 1 3 1 NJ 1280
+preplace netloc sys_clock_clk_126 1 0 4 30 1170 560 450 1070 1570 1450J
+preplace netloc sys_clock_locked 1 1 3 600 1410 970 1410 1440J
+preplace netloc vga_hdmi_clk_rst_sys_0_ClkHdmiRstxRNAO 1 3 1 NJ 60
+preplace netloc vga_hdmi_clk_rst_sys_0_ClkHdmiRstxRO 1 3 1 NJ 80
+preplace netloc vga_hdmi_clk_rst_sys_0_ClkHdmixCO 1 3 1 NJ 100
+preplace netloc vga_hdmi_clk_rst_sys_0_ClkVgaRstxRNAO 1 3 1 NJ 120
+preplace netloc vga_hdmi_clk_rst_sys_0_ClkVgaRstxRO 1 3 1 NJ 140
+preplace netloc vga_hdmi_clk_rst_sys_0_ClkVgaxCO 1 3 1 NJ 160
+preplace netloc vga_hdmi_clk_rst_sys_0_VgaHdmiClkPllLockedxSO 1 3 1 NJ 180
+preplace netloc xlconcat_0_dout 1 2 1 970 540n
+preplace netloc axi_gpio_0_GPIO 1 3 1 NJ 750
+preplace netloc axi_gpio_joystick_GPIO 1 3 1 NJ 310
+preplace netloc axi_gpio_reset_btn_GPIO 1 3 1 NJ 620
+preplace netloc axi_iic_joystick_0_IIC 1 3 1 NJ 440
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 1350 NJ 1350 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 1370 NJ 1370 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 550 680n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 1030 800n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 1080 820n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 1060 740n
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 1050 600n
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 1020 880n
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 1040 440n
+preplace netloc ps7_0_axi_periph_M06_AXI 1 2 1 980 300n
+preplace netloc scalp_axi_link_0_aximm_mst_if 1 3 1 NJ 1470
+preplace netloc scalp_axi_link_cplx_num_regs_aximm_mst_if 1 3 1 NJ 1240
+levelinfo -pg 1 0 260 780 1260 1490
+pagesize -pg 1 -db -bbox -sgen -210 0 1770 1690
+",
+   "linktoobj_comment_0":"/vga_hdmi_clk_rst_sys_0",
+   "linktotype_comment_0":"bd_cell"
+}
+
+{
+   "/vga_hdmi_clk_rst_sys_0/comment_0":"comment_0"
+}
