@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z015clg485-2" LaunchTime="1746547778">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="scalp_user_design_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="scalp_user_design_routed.rqs"/>
+  <File Type="RBD_FILE" Name="scalp_user_design.rbd"/>
+  <File Type="NPI_FILE" Name="scalp_user_design.npi"/>
+  <File Type="RNPI_FILE" Name="scalp_user_design.rnpi"/>
+  <File Type="ROUTE-BUS-SKEW" Name="compute_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="compute_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="compute_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="compute_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="compute_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="compute_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="compute_drc_routed.rpx"/>
+  <File Type="ROUTE-PWR-RPX" Name="compute_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="compute_route_status.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="compute_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="compute_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="compute_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="compute_power_routed.rpt"/>
+  <File Type="OPT-DRC" Name="compute_drc_opted.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="compute_route_status.pb"/>
+  <File Type="ROUTE-DRC" Name="compute_drc_routed.rpt"/>
+  <File Type="PLACE-UTIL" Name="compute_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="compute_utilization_placed.pb"/>
+  <File Type="PLACE-IO" Name="compute_io_placed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="compute_drc_routed.pb"/>
+  <File Type="OPT-HWDEF" Name="scalp_user_design.hwdef"/>
+  <File Type="PLACE-CTRL" Name="compute_control_sets_placed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="compute_bus_skew_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="scalp_user_design_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="compute_bus_skew_routed.pb"/>
+  <File Type="PA-TCL" Name="scalp_user_design.tcl"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="compute_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="compute_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="compute_timing_summary_postroute_physopted.pb"/>
+  <File Type="RDI-RDI" Name="scalp_user_design.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="compute_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="compute_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="compute_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="scalp_user_design.bit"/>
+  <File Type="PDI-FILE" Name="scalp_user_design.pdi"/>
+  <File Type="BG-DRC" Name="scalp_user_design.drc"/>
+  <File Type="BG-BGN" Name="scalp_user_design.bgn"/>
+  <File Type="RCFI_FILE" Name="scalp_user_design.rcfi"/>
+  <File Type="BG-BIN" Name="scalp_user_design.bin"/>
+  <File Type="CFI_FILE" Name="scalp_user_design.cfi"/>
+  <File Type="BITSTR-MSK" Name="scalp_user_design.msk"/>
+  <File Type="BITSTR-RBT" Name="scalp_user_design.rbt"/>
+  <File Type="BITSTR-NKY" Name="scalp_user_design.nky"/>
+  <File Type="BITSTR-BMM" Name="scalp_user_design_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="scalp_user_design.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="scalp_user_design.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="scalp_user_design.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="scalp_user_design_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="scalp_user_design_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="scalp_user_design_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="scalp_user_design_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="scalp_user_design_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="scalp_user_design_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="scalp_user_design_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="scalp_user_design_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="scalp_user_design_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="scalp_user_design_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="scalp_user_design_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="scalp_user_design_postroute_physopt_bb.dcp"/>
+  <File Type="BOOT-PDI-FILE" Name="scalp_user_design_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="scalp_user_design_pld.pdi"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../scalp_zynqps/scalp_zynqps.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_axi_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="scalp_lib"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_axi_pkg.vhd"/>
+        <Attr Name="ImportTime" Val="1711378947"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_cplx_num_regs.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_cplx_num_regs.vhd"/>
+        <Attr Name="ImportTime" Val="1711468971"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_firmwareid.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_firmwareid.vhd"/>
+        <Attr Name="ImportTime" Val="1711379206"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_hdmi_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="scalp_lib"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_hdmi_pkg.vhd"/>
+        <Attr Name="ImportTime" Val="1711439167"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/vga_stripes.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/vga_stripes.vhd"/>
+        <Attr Name="ImportTime" Val="1710831565"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/vga_controler.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/vga_controler.vhd"/>
+        <Attr Name="ImportTime" Val="1710924813"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/vga.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/vga.vhd"/>
+        <Attr Name="ImportTime" Val="1710915455"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/tmds_encoder.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/tmds_encoder.vhd"/>
+        <Attr Name="ImportTime" Val="1710828209"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/serializer_10_to_1.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/serializer_10_to_1.vhd"/>
+        <Attr Name="ImportTime" Val="1710924880"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/vga_to_hdmi.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/vga_to_hdmi.vhd"/>
+        <Attr Name="ImportTime" Val="1711093135"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_hdmi.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_hdmi.vhd"/>
+        <Attr Name="ImportTime" Val="1711087956"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_pwm.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_pwm.vhd"/>
+        <Attr Name="ImportTime" Val="1709809462"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_zynqps_user.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_zynqps_user.vhd"/>
+        <Attr Name="ImportTime" Val="1711369193"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_user_design.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_user_design.vhd"/>
+        <Attr Name="ImportTime" Val="1711437819"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/vga_hdmi_clk_rst_system/vga_hdmi_clk_rst_system.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/files/scalp_cdc_sync.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_cdc_sync.vhd"/>
+        <Attr Name="ImportTime" Val="1711380661"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/compute.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="scalp_user_design"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/files/debug.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/debug.xdc"/>
+        <Attr Name="ImportTime" Val="1711469651"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/files/ibert_constraints.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/ibert_constraints.xdc"/>
+        <Attr Name="ImportTime" Val="1700558248"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/files/pblock.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/pblock.xdc"/>
+        <Attr Name="ImportTime" Val="1711381622"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/files/scalp_firmware.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_firmware.xdc"/>
+        <Attr Name="ImportTime" Val="1711469651"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/files/timing_constraints.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../files/timing_constraints.xdc"/>
+        <Attr Name="ImportTime" Val="1711469651"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/scalp_user_design.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_rst_ps7_0_125M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_sys_clock_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_reset_btn_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_switches_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_intc_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_firmwareid_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_iic_ioext_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_2_hdmi_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_joystick_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_1_vga_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_cplx_num_regs_0"/>
+</GenRun>

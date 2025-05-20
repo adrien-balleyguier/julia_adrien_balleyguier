@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+// Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-// Date        : Wed Mar 27 07:15:44 2024
-// Host        : xps15-deb running 64-bit Debian GNU/Linux 12 (bookworm)
+// Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+// Date        : Tue May  6 16:02:57 2025
+// Host        : 0b53d29d5860 running 64-bit unknown
 // Command     : write_verilog -force -mode funcsim
-//               /home/jo/projects/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_auto_pc_0/scalp_zynqps_auto_pc_0_sim_netlist.v
+//               /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_auto_pc_0/scalp_zynqps_auto_pc_0_sim_netlist.v
 // Design      : scalp_zynqps_auto_pc_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -7520,10 +7520,9 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axi_register_slice
   wire [11:0]Q;
   wire [3:0]S;
   wire aclk;
-  wire \ar.ar_pipe_n_2 ;
   wire aresetn;
   wire \aw.aw_pipe_n_1 ;
-  wire \aw.aw_pipe_n_104 ;
+  wire \aw.aw_pipe_n_3 ;
   wire [11:0]axaddr_incr;
   wire [3:0]\axaddr_incr_reg[3] ;
   wire [3:0]\axaddr_incr_reg[3]_0 ;
@@ -7606,8 +7605,6 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axi_register_slice
         .O(O),
         .Q(\m_payload_i_reg[61]_0 ),
         .aclk(aclk),
-        .\aresetn_d_reg[1]_inv_0 (\ar.ar_pipe_n_2 ),
-        .\aresetn_d_reg[1]_inv_1 (\aw.aw_pipe_n_104 ),
         .\axaddr_incr_reg[3] (\axaddr_incr_reg[3] ),
         .\axaddr_incr_reg[3]_0 (\axaddr_incr_reg[3]_1 ),
         .\axaddr_wrap_reg[3] (\axaddr_wrap_reg[3]_0 ),
@@ -7629,6 +7626,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axi_register_slice
         .\m_payload_i_reg[6]_1 (\m_payload_i_reg[6]_0 ),
         .\m_payload_i_reg[7]_0 (\m_payload_i_reg[7] ),
         .m_valid_i0(m_valid_i0),
+        .m_valid_i_reg_0(\aw.aw_pipe_n_3 ),
         .next_pending_r_reg(next_pending_r_reg_0),
         .s_axi_araddr(s_axi_araddr),
         .s_axi_arburst(s_axi_arburst),
@@ -7650,7 +7648,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axi_register_slice
         .aclk(aclk),
         .aresetn(aresetn),
         .\aresetn_d_reg[0]_0 (\aw.aw_pipe_n_1 ),
-        .\aresetn_d_reg[0]_1 (\aw.aw_pipe_n_104 ),
+        .\aresetn_d_reg[1]_inv_0 (\aw.aw_pipe_n_3 ),
         .axaddr_incr(axaddr_incr),
         .\axaddr_incr_reg[3] (\axaddr_incr_reg[3]_0 ),
         .\axaddr_wrap_reg[3] (\axaddr_wrap_reg[3] ),
@@ -7666,7 +7664,6 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axi_register_slice
         .\m_payload_i_reg[5]_0 (\m_payload_i_reg[5] ),
         .\m_payload_i_reg[61]_0 (\m_payload_i_reg[61] ),
         .m_valid_i_reg_0(si_rs_awvalid),
-        .m_valid_i_reg_1(\ar.ar_pipe_n_2 ),
         .next_pending_r_reg(next_pending_r_reg),
         .s_axi_awaddr(s_axi_awaddr),
         .s_axi_awburst(s_axi_awburst),
@@ -7683,7 +7680,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axi_register_slice
        (.aclk(aclk),
         .\m_payload_i_reg[13]_0 (\m_payload_i_reg[13] ),
         .m_valid_i_reg_0(m_valid_i_reg),
-        .m_valid_i_reg_1(\ar.ar_pipe_n_2 ),
+        .m_valid_i_reg_1(\aw.aw_pipe_n_3 ),
         .out(out),
         .s_axi_bready(s_axi_bready),
         .s_ready_i_reg_0(si_rs_bready),
@@ -7695,7 +7692,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axi_register_slice
        (.aclk(aclk),
         .\m_payload_i_reg[46]_0 (\m_payload_i_reg[46] ),
         .m_valid_i_reg_0(m_valid_i_reg_0),
-        .m_valid_i_reg_1(\ar.ar_pipe_n_2 ),
+        .m_valid_i_reg_1(\aw.aw_pipe_n_3 ),
         .m_valid_i_reg_2(m_valid_i_reg_1),
         .s_axi_rready(s_axi_rready),
         .s_ready_i_reg_0(si_rs_rready),
@@ -7709,7 +7706,6 @@ endmodule
 module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
    (s_ready_i_reg_0,
     si_rs_arvalid,
-    \aresetn_d_reg[1]_inv_0 ,
     \axaddr_incr_reg[3] ,
     Q,
     \axaddr_wrap_reg[3] ,
@@ -7730,8 +7726,8 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
     s_ready_i_reg_1,
     s_ready_i0,
     aclk,
+    m_valid_i_reg_0,
     m_valid_i0,
-    \aresetn_d_reg[1]_inv_1 ,
     \m_axi_araddr[11] ,
     \m_axi_araddr[11]_0 ,
     \axaddr_incr_reg[3]_0 ,
@@ -7748,7 +7744,6 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
     \m_payload_i_reg[0]_0 );
   output s_ready_i_reg_0;
   output si_rs_arvalid;
-  output \aresetn_d_reg[1]_inv_0 ;
   output [3:0]\axaddr_incr_reg[3] ;
   output [53:0]Q;
   output [3:0]\axaddr_wrap_reg[3] ;
@@ -7769,8 +7764,8 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
   input s_ready_i_reg_1;
   input s_ready_i0;
   input aclk;
+  input m_valid_i_reg_0;
   input m_valid_i0;
-  input \aresetn_d_reg[1]_inv_1 ;
   input [11:0]\m_axi_araddr[11] ;
   input [11:0]\m_axi_araddr[11]_0 ;
   input [3:0]\axaddr_incr_reg[3]_0 ;
@@ -7790,8 +7785,6 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
   wire [3:0]O;
   wire [53:0]Q;
   wire aclk;
-  wire \aresetn_d_reg[1]_inv_0 ;
-  wire \aresetn_d_reg[1]_inv_1 ;
   wire \axaddr_incr[3]_i_4__0_n_0 ;
   wire \axaddr_incr[3]_i_5__0_n_0 ;
   wire \axaddr_incr[3]_i_6__0_n_0 ;
@@ -7884,6 +7877,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
   wire [3:0]\m_payload_i_reg[7]_0 ;
   wire \m_payload_i_reg_n_0_[38] ;
   wire m_valid_i0;
+  wire m_valid_i_reg_0;
   wire next_pending_r_reg;
   wire [31:0]s_axi_araddr;
   wire [1:0]s_axi_arburst;
@@ -7954,15 +7948,6 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
   wire \wrap_boundary_axaddr_r[3]_i_2__0_n_0 ;
   wire [3:3]\NLW_axaddr_incr_reg[11]_i_3__0_CO_UNCONNECTED ;
 
-  (* inverted = "yes" *) 
-  FDRE #(
-    .INIT(1'b1)) 
-    \aresetn_d_reg[1]_inv 
-       (.C(aclk),
-        .CE(1'b1),
-        .D(\aresetn_d_reg[1]_inv_1 ),
-        .Q(\aresetn_d_reg[1]_inv_0 ),
-        .R(1'b0));
   LUT3 #(
     .INIT(8'h6A)) 
     \axaddr_incr[3]_i_11__0 
@@ -9031,7 +9016,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice
         .CE(1'b1),
         .D(m_valid_i0),
         .Q(si_rs_arvalid),
-        .R(\aresetn_d_reg[1]_inv_0 ));
+        .R(m_valid_i_reg_0));
   LUT5 #(
     .INIT(32'h0000FFFE)) 
     next_pending_r_i_3__0
@@ -9469,6 +9454,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
    (s_ready_i_reg_0,
     \aresetn_d_reg[0]_0 ,
     m_valid_i_reg_0,
+    \aresetn_d_reg[1]_inv_0 ,
     S,
     \m_payload_i_reg[61]_0 ,
     \axaddr_wrap_reg[3] ,
@@ -9483,9 +9469,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
     \m_payload_i_reg[1]_1 ,
     \m_payload_i_reg[2]_1 ,
     m_axi_awaddr,
-    \aresetn_d_reg[0]_1 ,
     aclk,
-    m_valid_i_reg_1,
     aresetn,
     Q,
     \m_axi_awaddr[11] ,
@@ -9506,6 +9490,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
   output s_ready_i_reg_0;
   output \aresetn_d_reg[0]_0 ;
   output m_valid_i_reg_0;
+  output \aresetn_d_reg[1]_inv_0 ;
   output [3:0]S;
   output [53:0]\m_payload_i_reg[61]_0 ;
   output [3:0]\axaddr_wrap_reg[3] ;
@@ -9520,9 +9505,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
   output \m_payload_i_reg[1]_1 ;
   output \m_payload_i_reg[2]_1 ;
   output [11:0]m_axi_awaddr;
-  output \aresetn_d_reg[0]_1 ;
   input aclk;
-  input m_valid_i_reg_1;
   input aresetn;
   input [11:0]Q;
   input [11:0]\m_axi_awaddr[11] ;
@@ -9548,8 +9531,9 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
   wire [3:0]S;
   wire aclk;
   wire aresetn;
+  wire \aresetn_d[1]_inv_i_1_n_0 ;
   wire \aresetn_d_reg[0]_0 ;
-  wire \aresetn_d_reg[0]_1 ;
+  wire \aresetn_d_reg[1]_inv_0 ;
   wire \aresetn_d_reg_n_0_[0] ;
   wire [11:0]axaddr_incr;
   wire \axaddr_incr[3]_i_4_n_0 ;
@@ -9583,7 +9567,6 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
   wire \m_payload_i_reg_n_0_[38] ;
   wire m_valid_i0;
   wire m_valid_i_reg_0;
-  wire m_valid_i_reg_1;
   wire next_pending_r_reg;
   wire [31:0]s_axi_awaddr;
   wire [1:0]s_axi_awburst;
@@ -9661,7 +9644,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
     \aresetn_d[1]_inv_i_1 
        (.I0(\aresetn_d_reg_n_0_[0] ),
         .I1(aresetn),
-        .O(\aresetn_d_reg[0]_1 ));
+        .O(\aresetn_d[1]_inv_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \aresetn_d_reg[0] 
@@ -9669,6 +9652,15 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
         .CE(1'b1),
         .D(aresetn),
         .Q(\aresetn_d_reg_n_0_[0] ),
+        .R(1'b0));
+  (* inverted = "yes" *) 
+  FDRE #(
+    .INIT(1'b1)) 
+    \aresetn_d_reg[1]_inv 
+       (.C(aclk),
+        .CE(1'b1),
+        .D(\aresetn_d[1]_inv_i_1_n_0 ),
+        .Q(\aresetn_d_reg[1]_inv_0 ),
         .R(1'b0));
   LUT3 #(
     .INIT(8'h6A)) 
@@ -10737,7 +10729,7 @@ module scalp_zynqps_auto_pc_0_axi_register_slice_v2_1_29_axic_register_slice_0
         .CE(1'b1),
         .D(m_valid_i0),
         .Q(m_valid_i_reg_0),
-        .R(m_valid_i_reg_1));
+        .R(\aresetn_d_reg[1]_inv_0 ));
   LUT5 #(
     .INIT(32'h0000FFFE)) 
     next_pending_r_i_4
