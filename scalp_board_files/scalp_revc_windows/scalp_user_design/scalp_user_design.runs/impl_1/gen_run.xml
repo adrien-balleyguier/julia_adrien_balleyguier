@@ -292,21 +292,21 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_joystick_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_cplx_num_regs_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_1_vga_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_reset_btn_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_intc_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_switches_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_firmwareid_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_joystick_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_rst_ps7_0_125M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_sys_clock_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_iic_ioext_0"/>
   <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_2_hdmi_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_firmwareid_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_system_ila_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_switches_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_intc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_reset_btn_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_1_vga_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_cplx_num_regs_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_iic_ioext_0"/>
 </GenRun>

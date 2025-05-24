@@ -24,7 +24,7 @@ use IEEE.std_logic_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -33,16 +33,21 @@ use IEEE.std_logic_1164.ALL;
 
 -- entity 
 entity scheduler is
-    Port ( x_screen : in std_logic;
-           y_screen : in std_logic;
-           screen_width : in std_logic;
-           screen_height : in std_logic;
-           saved : in std_logic;
-           z0 : out std_logic;
-           x : out std_logic;
-           y :out std_logic);
+    Port ( 
+        x_screen : in std_logic;
+        y_screen : in std_logic;
+        screen_width : in std_logic;
+        screen_height : in std_logic;
+        saved : in std_logic;
+        z0 : out std_logic;
+        x : out std_logic;
+        y :out std_logic
+    );
 end scheduler;
 
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.NUMERIC_STD.all;
 entity screen_dim_extractor is
     Port (
         x_screen : in std_logic;
@@ -54,18 +59,25 @@ entity screen_dim_extractor is
     );
 end screen_dim_extractor;
 
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.NUMERIC_STD.all;
 entity coordinate_tracker is
+    Generic(
+        LIMIT_X : integer range 0 to 2047 := 1024;
+        LIMIT_Y : integer range 0 to 2047 := 1024
+    );
     Port (
-        step_re : in std_logic;
-        step_im : in std_logic;
-        rst : in std_logic;
-        get_next : in std_logic;
-        z0 : out std_logic;
-        x : out std_logic;
-        y : out std_logic
+        min_re, min_im, step_re, step_im : in std_logic_vector(15 downto 0); -- 3 bits decimal
+        nrst, get_next : in std_logic;
+        z0_re, z0_im : inout std_logic_vector(15 downto 0); -- 3 bits decimal
+        x, y : inout std_logic_vector(9 downto 0)
     );
 end coordinate_tracker;
 
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.NUMERIC_STD.all;
 entity dispatcher is
     Port (
         z0_in : in std_logic;
@@ -88,8 +100,28 @@ begin
 end behave_screen_dim_extractor;
 
 architecture behave_coordinate_tracker of coordinate_tracker is
-
 begin
+    process(nrst, get_next)
+    begin
+        if nrst = '0' then
+            z0_re <= min_re;
+            z0_im <= min_im;
+            x <= (others => '0');
+            y <= (others => '0');
+        elsif rising_edge(get_next) then
+            if (unsigned(y) < LIMIT_Y) then
+                if (unsigned(x) < LIMIT_X) then
+                    x <= std_logic_vector(unsigned(x) + "1");
+                    z0_re <= std_logic_vector(unsigned(z0_re) + unsigned(step_re));
+                else
+                    x <= (others => '0');
+                    z0_re <= min_re;
+                    y <= std_logic_vector(unsigned(y) + "1");
+                    z0_im <= std_logic_vector(unsigned(z0_im) + unsigned(step_im));
+                end if;
+            end if;
+        end if;
+    end process;
 end behave_coordinate_tracker;
 
 architecture behave_dispatcher of dispatcher is
