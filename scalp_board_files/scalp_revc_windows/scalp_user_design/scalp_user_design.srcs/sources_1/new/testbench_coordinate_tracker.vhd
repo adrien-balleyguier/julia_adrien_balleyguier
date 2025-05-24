@@ -37,8 +37,8 @@ entity testbench_coordinate_tracker is
         TEST_LIMIT_Y : integer range 0 to 1024 := 10;
         TEST_MIN_RE : std_logic_vector := "1100000000000000"; -- -2
         TEST_MIN_IM : std_logic_vector := "0110000000000000"; -- -1
-        TEST_STEP_RE: std_logic_vector := "0000000000011000"; -- 3/1024
-        TEST_STEP_IM: std_logic_vector := "0000000000001000" -- 2/1024
+        TEST_STEP_RE: std_logic_vector := "0110000000000000"; -- 3
+        TEST_STEP_IM: std_logic_vector := "0100000000000000" -- 2
     );
 end testbench_coordinate_tracker;
 
@@ -49,7 +49,7 @@ architecture Behavioral of testbench_coordinate_tracker is
             LIMIT_Y : integer range 0 to 2047 := 1024
         );
         Port (
-            min_re, min_im, step_re, step_im : in std_logic_vector(15 downto 0);
+            min_re, min_im, screen_width, screen_height: in std_logic_vector(15 downto 0);
             nrst, get_next : in std_logic;
             z0_re, z0_im : inout std_logic_vector(15 downto 0);
             x, y : inout std_logic_vector(9 downto 0)
@@ -66,7 +66,7 @@ begin
             LIMIT_Y => TEST_LIMIT_Y
         )
         port map(
-            min_re => TEST_MIN_RE, min_im => TEST_MIN_IM, step_re => TEST_STEP_RE, step_im => TEST_STEP_IM,
+            min_re => TEST_MIN_RE, min_im => TEST_MIN_IM, screen_width => TEST_STEP_RE, screen_height => TEST_STEP_IM,
             nrst => nrst, get_next => get_next,
             z0_re => z0_re, z0_im => z0_im,
             x => x, y => y

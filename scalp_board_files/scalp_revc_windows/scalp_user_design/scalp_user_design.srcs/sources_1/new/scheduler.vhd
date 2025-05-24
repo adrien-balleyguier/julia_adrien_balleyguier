@@ -48,27 +48,13 @@ end scheduler;
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.NUMERIC_STD.all;
-entity screen_dim_extractor is
-    Port (
-        x_screen : in std_logic;
-        y_screen : in std_logic;
-        screen_width : in std_logic;
-        screen_height : in std_logic;
-        step_re : out std_logic;
-        std_im : out std_logic
-    );
-end screen_dim_extractor;
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.NUMERIC_STD.all;
 entity coordinate_tracker is
     Generic(
         LIMIT_X : integer range 0 to 2047 := 1024;
         LIMIT_Y : integer range 0 to 2047 := 1024
     );
     Port (
-        min_re, min_im, step_re, step_im : in std_logic_vector(15 downto 0); -- 3 bits decimal
+        min_re, min_im, screen_width, screen_height : in std_logic_vector(15 downto 0); -- 3 bits decimal
         nrst, get_next : in std_logic;
         z0_re, z0_im : inout std_logic_vector(15 downto 0); -- 3 bits decimal
         x, y : inout std_logic_vector(9 downto 0)
@@ -94,12 +80,8 @@ architecture behave_scheduler of scheduler is
 begin
 end behave_scheduler;
 
-architecture behave_screen_dim_extractor of screen_dim_extractor is
-
-begin
-end behave_screen_dim_extractor;
-
 architecture behave_coordinate_tracker of coordinate_tracker is
+    signal step_re, step_im : std_logic_vector(15 downto 0);
 begin
     process(nrst, get_next)
     begin
@@ -108,6 +90,8 @@ begin
             z0_im <= min_im;
             x <= (others => '0');
             y <= (others => '0');
+            step_re <= std_logic_vector(unsigned(screen_width) / LIMIT_X);
+            step_im <= std_logic_vector(unsigned(screen_height) / LIMIT_Y);
         elsif rising_edge(get_next) then
             if (unsigned(y) < LIMIT_Y) then
                 if (unsigned(x) < (LIMIT_X-1)) then
