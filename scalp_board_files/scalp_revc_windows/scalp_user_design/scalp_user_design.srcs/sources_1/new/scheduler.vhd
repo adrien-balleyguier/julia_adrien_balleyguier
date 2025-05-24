@@ -110,7 +110,7 @@ begin
             y <= (others => '0');
         elsif rising_edge(get_next) then
             if (unsigned(y) < LIMIT_Y) then
-                if (unsigned(x) < LIMIT_X) then
+                if (unsigned(x) < (LIMIT_X-1)) then
                     x <= std_logic_vector(unsigned(x) + "1");
                     z0_re <= std_logic_vector(unsigned(z0_re) + unsigned(step_re));
                 else

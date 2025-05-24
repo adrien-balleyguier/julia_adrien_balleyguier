@@ -34,7 +34,11 @@ use IEEE.NUMERIC_STD.ALL;
 entity testbench_coordinate_tracker is
     Generic(
         TEST_LIMIT_X : integer range 0 to 1024 := 10;
-        TEST_LIMIT_Y : integer range 0 to 1024 := 10
+        TEST_LIMIT_Y : integer range 0 to 1024 := 10;
+        TEST_MIN_RE : std_logic_vector := "1100000000000000"; -- -2
+        TEST_MIN_IM : std_logic_vector := "0110000000000000"; -- -1
+        TEST_STEP_RE: std_logic_vector := "0000000000011000"; -- 3/1024
+        TEST_STEP_IM: std_logic_vector := "0000000000001000" -- 2/1024
     );
 end testbench_coordinate_tracker;
 
@@ -51,8 +55,8 @@ architecture Behavioral of testbench_coordinate_tracker is
             x, y : inout std_logic_vector(9 downto 0)
         );
     end component;
+    signal z0_re, z0_im : std_logic_vector(15 downto 0);
     signal clk, nrst, get_next : std_logic := '0';
-    signal min_re, min_im, step_re, step_im, z0_re, z0_im : std_logic_vector(15 downto 0);
     signal x, y : std_logic_vector(9 downto 0) := (others => '0');
     constant CLK_PERIOD : time := 1 ns;
 begin
@@ -62,7 +66,7 @@ begin
             LIMIT_Y => TEST_LIMIT_Y
         )
         port map(
-            min_re => min_re, min_im => min_im, step_re => step_re, step_im => step_im,
+            min_re => TEST_MIN_RE, min_im => TEST_MIN_IM, step_re => TEST_STEP_RE, step_im => TEST_STEP_IM,
             nrst => nrst, get_next => get_next,
             z0_re => z0_re, z0_im => z0_im,
             x => x, y => y
@@ -87,7 +91,7 @@ begin
     test_process: process
     begin
         wait for CLK_PERIOD;
-        for i in 0 to (TEST_LIMIT_X*TEST_LIMIT_Y) loop
+        for i in 0 to (TEST_LIMIT_X*TEST_LIMIT_Y+10) loop
             get_next <= '0';
             wait for CLK_PERIOD;
             get_next <= '1';
