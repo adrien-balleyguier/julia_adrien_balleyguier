@@ -53,7 +53,7 @@
       </File>
     </FileCollection>
     <BlockContainerCollection>
-      <BlockContainer InstPath="/vga_hdmi_clk_rst_sys_0" IsPR="false" State="Generated">
+      <BlockContainer InstPath="/vga_hdmi_clk_rst_sys_0" IsPR="false" State="Needs Refresh">
         <ActiveVariantSynth FileName="bd/vga_hdmi_clk_rst_system_inst_0/vga_hdmi_clk_rst_system_inst_0.bd"/>
         <ActiveVariantSim FileName="bd/vga_hdmi_clk_rst_system_inst_0/vga_hdmi_clk_rst_system_inst_0.bd"/>
         <VariantsCollection>

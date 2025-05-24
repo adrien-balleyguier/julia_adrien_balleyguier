@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 05/20/2025 04:19:38 PM
+-- Create Date: 04/24/2025 11:22:43 AM
 -- Design Name: 
--- Module Name: testbench_coordinate_tracker - Behavioral
+-- Module Name:  - 
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,13 +31,23 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity testbench_coordinate_tracker is
---  Port ( );
-end testbench_coordinate_tracker;
+-- entity 
 
-architecture Behavioral of testbench_coordinate_tracker is
+entity bram_w is
+--  Port ( ); -- manage multiple compute + ram writing
+end bram_w;
+
+entity bram_r is
+-- Port ( ); -- ram reading + hdmi feeding
+end bram_r;
+-- architecture
+
+architecture behave_bram_w  of bram_w is
 
 begin
+end behave_bram_w;
 
+architecture behave_bram_r of bram_r is
 
-end Behavioral;
+begin
+end behave_bram_r;

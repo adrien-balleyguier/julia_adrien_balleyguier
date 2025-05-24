@@ -1,0 +1,61 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../scalp_user_design.ip_user_files/bd/vga_hdmi_clk_rst_system_inst_0/ip/vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0/vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0_clk_wiz.v" \
+"../../../../scalp_user_design.ip_user_files/bd/vga_hdmi_clk_rst_system_inst_0/ip/vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0/vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0.v" \
+
+verilog xlconstant_v1_1_8  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v" \
+
+verilog xil_defaultlib  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../scalp_user_design.ip_user_files/bd/scalp_zynqps/ip/scalp_zynqps_gnd_constant_0/sim/scalp_zynqps_gnd_constant_0.v" \
+
+verilog axi_infrastructure_v1_1_0  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
+
+sv axi_vip_v1_1_15  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/5753/hdl/axi_vip_v1_1_vl_rfs.sv" \
+
+sv processing_system7_vip_v1_0_17  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/6b2b/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
+
+verilog xil_defaultlib  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../scalp_user_design.ip_user_files/bd/scalp_zynqps/ip/scalp_zynqps_processing_system7_0_0/sim/scalp_zynqps_processing_system7_0_0.v" \
+
+verilog generic_baseblocks_v2_1_1  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+
+verilog axi_register_slice_v2_1_29  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+
+verilog fifo_generator_v13_2_9  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/ac72/simulation/fifo_generator_vlog_beh.v" \
+"../../../../../scalp_zynqps/ipshared/ac72/hdl/fifo_generator_v13_2_rfs.v" \
+
+verilog axi_data_fifo_v2_1_28  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
+
+verilog axi_crossbar_v2_1_30  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+
+verilog xil_defaultlib  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../scalp_user_design.ip_user_files/bd/scalp_zynqps/ip/scalp_zynqps_xbar_0/sim/scalp_zynqps_xbar_0.v" \
+
+verilog axi_protocol_converter_v2_1_29  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/a63f/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
+
+verilog xil_defaultlib  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../scalp_user_design.ip_user_files/bd/scalp_zynqps/ip/scalp_zynqps_auto_pc_0/sim/scalp_zynqps_auto_pc_0.v" \
+
+verilog xlconcat_v2_1_5  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../../scalp_zynqps/ipshared/147b/hdl/xlconcat_v2_1_vl_rfs.v" \
+
+verilog xil_defaultlib  --include "../../../../../scalp_zynqps/ipshared/ec67/hdl" --include "../../../../../scalp_zynqps/ipshared/6b2b/hdl" --include "../../../../../scalp_zynqps/ipshared/c2c6" --include "../../../../../scalp_zynqps/bd/vga_hdmi_clk_rst_system_inst_0/ipshared/c2c6" --include "/tools/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../scalp_user_design.ip_user_files/bd/scalp_zynqps/ip/scalp_zynqps_xlconcat_0_0/sim/scalp_zynqps_xlconcat_0_0.v" \
+"../../../../scalp_user_design.ip_user_files/bd/scalp_zynqps/ip/scalp_zynqps_sys_clock_0/scalp_zynqps_sys_clock_0_clk_wiz.v" \
+"../../../../scalp_user_design.ip_user_files/bd/scalp_zynqps/ip/scalp_zynqps_sys_clock_0/scalp_zynqps_sys_clock_0.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

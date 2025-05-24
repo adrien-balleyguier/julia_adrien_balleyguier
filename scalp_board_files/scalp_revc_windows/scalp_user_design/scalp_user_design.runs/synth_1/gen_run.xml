@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z015clg485-2" LaunchTime="1746547397" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/scalp_user_design.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z015clg485-2" LaunchTime="1742321213" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/scalp_user_design.dcp">
   <File Type="RDS-DCP" Name="scalp_user_design.dcp"/>
   <File Type="RDS-RDS" Name="scalp_user_design.vds"/>
-  <File Type="RDS-UTIL" Name="compute_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="compute_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="scalp_user_design_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="scalp_user_design_utilization_synth.pb"/>
   <File Type="PA-TCL" Name="scalp_user_design.tcl"/>
   <File Type="REPORTS-TCL" Name="scalp_user_design_reports.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
@@ -147,13 +147,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/compute.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="scalp_user_design"/>
@@ -226,21 +219,21 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_joystick_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_rst_ps7_0_125M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_sys_clock_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_reset_btn_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_sys_clock_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_iic_ioext_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_2_hdmi_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_firmwareid_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_system_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_switches_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_intc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_firmwareid_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_iic_ioext_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_2_hdmi_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_joystick_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_reset_btn_0"/>
   <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_1_vga_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_cplx_num_regs_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_auto_pc_0"/>
 </GenRun>

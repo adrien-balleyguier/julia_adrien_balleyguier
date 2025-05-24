@@ -4,7 +4,7 @@
       "boundary_crc": "0xFE3D591F49CBC685",
       "device": "xc7z015clg485-2",
       "name": "scalp_zynqps",
-      "pfm_name": "hepia:scalp:scalp_zynq_user_pltfm:1.0",
+      "pfm_name": "xilinx:scalp_node:scalp_board:0.0",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2023.2",

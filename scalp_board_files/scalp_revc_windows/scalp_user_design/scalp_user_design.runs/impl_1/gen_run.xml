@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z015clg485-2" LaunchTime="1746547778">
+<GenRun Id="impl_1" LaunchPart="xc7z015clg485-2" LaunchTime="1742321213">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="scalp_user_design_postroute_physopted.rqs"/>
@@ -7,39 +7,39 @@
   <File Type="RBD_FILE" Name="scalp_user_design.rbd"/>
   <File Type="NPI_FILE" Name="scalp_user_design.npi"/>
   <File Type="RNPI_FILE" Name="scalp_user_design.rnpi"/>
-  <File Type="ROUTE-BUS-SKEW" Name="compute_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="compute_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="compute_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="compute_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="compute_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="compute_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="compute_drc_routed.rpx"/>
-  <File Type="ROUTE-PWR-RPX" Name="compute_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="compute_route_status.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="compute_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="compute_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="compute_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="compute_power_routed.rpt"/>
-  <File Type="OPT-DRC" Name="compute_drc_opted.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="compute_route_status.pb"/>
-  <File Type="ROUTE-DRC" Name="compute_drc_routed.rpt"/>
-  <File Type="PLACE-UTIL" Name="compute_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="compute_utilization_placed.pb"/>
-  <File Type="PLACE-IO" Name="compute_io_placed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="compute_drc_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="scalp_user_design_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="scalp_user_design_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="scalp_user_design_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="scalp_user_design_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="scalp_user_design_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="scalp_user_design_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="scalp_user_design_drc_routed.rpx"/>
+  <File Type="ROUTE-PWR-RPX" Name="scalp_user_design_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="scalp_user_design_route_status.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="scalp_user_design_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="scalp_user_design_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="scalp_user_design_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="scalp_user_design_power_routed.rpt"/>
+  <File Type="OPT-DRC" Name="scalp_user_design_drc_opted.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="scalp_user_design_route_status.pb"/>
+  <File Type="ROUTE-DRC" Name="scalp_user_design_drc_routed.rpt"/>
+  <File Type="PLACE-UTIL" Name="scalp_user_design_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="scalp_user_design_utilization_placed.pb"/>
+  <File Type="PLACE-IO" Name="scalp_user_design_io_placed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="scalp_user_design_drc_routed.pb"/>
   <File Type="OPT-HWDEF" Name="scalp_user_design.hwdef"/>
-  <File Type="PLACE-CTRL" Name="compute_control_sets_placed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="compute_bus_skew_routed.rpx"/>
+  <File Type="PLACE-CTRL" Name="scalp_user_design_control_sets_placed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="scalp_user_design_bus_skew_routed.rpx"/>
   <File Type="REPORTS-TCL" Name="scalp_user_design_reports.tcl"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="compute_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="scalp_user_design_bus_skew_routed.pb"/>
   <File Type="PA-TCL" Name="scalp_user_design.tcl"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="compute_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="compute_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="compute_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="scalp_user_design_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="scalp_user_design_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="scalp_user_design_timing_summary_postroute_physopted.pb"/>
   <File Type="RDI-RDI" Name="scalp_user_design.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="compute_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="compute_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="compute_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="scalp_user_design_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="scalp_user_design_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="scalp_user_design_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="scalp_user_design.bit"/>
   <File Type="PDI-FILE" Name="scalp_user_design.pdi"/>
   <File Type="BG-DRC" Name="scalp_user_design.drc"/>
@@ -211,13 +211,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/compute.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="scalp_user_design"/>
@@ -299,21 +292,21 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_joystick_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_rst_ps7_0_125M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_sys_clock_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_reset_btn_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_sys_clock_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_iic_ioext_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_2_hdmi_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_firmwareid_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_system_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_switches_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_intc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_firmwareid_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_iic_ioext_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_2_hdmi_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_joystick_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_axi_gpio_reset_btn_0"/>
   <BlockFileSet Type="BlockSrcs" Name="vga_hdmi_clk_rst_system_inst_0_rst_ps7_1_vga_0"/>
   <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_scalp_axi_link_cplx_num_regs_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="scalp_zynqps_auto_pc_0"/>
 </GenRun>
