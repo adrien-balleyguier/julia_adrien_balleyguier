@@ -1,7 +1,7 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
 "../../../../scalp_user_design.srcs/sources_1/new/compute.vhd" \
-"../../../../scalp_user_design.srcs/sources_1/new/testbench_compute.vhd" \
+"../../../../scalp_user_design.srcs/sources_1/new/testbench_compute_encapsulate.vhd" \
 
 # Do not sort compile order
 nosort

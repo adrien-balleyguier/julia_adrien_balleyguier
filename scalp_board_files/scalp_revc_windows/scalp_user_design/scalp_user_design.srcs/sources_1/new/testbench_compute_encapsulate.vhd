@@ -31,7 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity testbench_compute is
+entity testbench_compute_encapsulate is
     generic(
         C_RE : std_logic_vector(15 downto 0) := "1111110000010000"; -- -0.123
         C_IM : std_logic_vector(15 downto 0) := "0001011111011111"; -- +0.745
@@ -49,30 +49,28 @@ entity testbench_compute is
         TEST_D_RE : std_logic_vector(15 downto 0) := "1111100001110010"; -- -0.236083984375
         TEST_D_IM : std_logic_vector(15 downto 0) := "1111011110010011" -- -0.2633056640625
     );
-end testbench_compute;
+end testbench_compute_encapsulate;
 
-architecture Behavioral of testbench_compute is
-    component compute is 
+architecture Behavioral of testbench_compute_encapsulate is
+    component compute_encapsulate is 
         port(
             nrst, clk : in std_logic;
             saved, done : inout std_logic;
             lux: out std_logic;
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
-            x, y : inout std_logic_vector(9 downto 0);
-            z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
+            x, y : inout std_logic_vector(9 downto 0)
         );
     end component;
     signal nrst, clk, saved, lux, done : std_logic;
-    signal z_n_re, z_n_im, z_np1_re, z_np1_im : std_logic_vector(15 downto 0);
+    signal z_n_re, z_n_im: std_logic_vector(15 downto 0);
     signal x, y : std_logic_vector (9 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
-    comp : compute
+    comp : compute_encapsulate
     port map(
         nrst => nrst, clk => clk, saved => saved, lux => lux, done => done,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im,
-        x => x, y => y,
-        z_np1_re => z_np1_re, z_np1_im => z_np1_im
+        x => x, y => y
     );
 
     clk_process : process
@@ -93,16 +91,12 @@ begin
 
     test_process : process
     begin
+        z_n_re <= TEST_D_RE;
+        z_n_im <= TEST_D_IM;
         wait for CLK_PERIOD;
-        z_n_re <= TEST_B_RE;
-        z_n_im <= TEST_B_IM;
         for i in 0 to NB_ITER_MAX loop
-            wait for CLK_PERIOD;
-            wait for CLK_PERIOD;
-            wait for CLK_PERIOD;
-            z_n_re <= z_np1_re;
-            z_n_im <= z_np1_im;
         end loop;
         wait;
     end process test_process;
 end Behavioral;
+

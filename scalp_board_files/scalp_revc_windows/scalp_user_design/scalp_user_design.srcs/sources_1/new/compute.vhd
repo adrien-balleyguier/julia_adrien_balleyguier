@@ -34,15 +34,27 @@ use IEEE.NUMERIC_STD.ALL;
 entity compute is
     Port ( 
         nrst, clk : in std_logic;
-        saved, done : inout std_logic;
+        done : inout std_logic;
         lux: out std_logic;
         c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0); -- 3 bits decimal
-        x, y : inout std_logic_vector(9 downto 0);
-        watcher : inout std_logic_vector(31 downto 0);
         z_np1_re : out std_logic_vector(15 downto 0);
         z_np1_im : out std_logic_vector(15 downto 0) -- 3 bits decimal
     );
 end compute;
+
+library IEEE;
+use IEEE.std_logic_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity compute_encapsulate is
+    Port(
+        nrst, clk : in std_logic;
+        saved, done : inout std_logic;
+        lux : out std_logic;
+        c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
+        x, y : inout std_logic_vector(9 downto 0)
+    );
+end compute_encapsulate;
 
 architecture Behavioral of compute is
     signal z_n_re_im : std_logic_vector(31 downto 0); -- 6 bits decimal
@@ -59,7 +71,6 @@ architecture Behavioral of compute is
 begin
     process(clk, nrst)
     begin
-        watcher <= norm;
         if (nrst = '0') then
             cntr <= (others => '0');
         elsif rising_edge(clk) then
@@ -91,3 +102,41 @@ begin
         end if;
     end process;
 end Behavioral;
+
+architecture Behavioral_encapsulate of compute_encapsulate is
+    component compute is
+        Port(
+            nrst, clk : in std_logic;
+            done : inout std_logic;
+            lux : out std_logic;
+            c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
+            z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
+        );
+    end component;
+    signal z_n_re_holder, z_n_im_holder : std_logic_vector(15 downto 0);
+    signal z_np1_re, z_np1_im : std_logic_vector(15 downto 0);
+    signal cntr : std_logic_vector(2 downto 0);
+    constant Z_COMPUTE_TIME : integer range 0 to 3 := 2;
+begin
+    comp : compute
+    port map(
+        nrst => nrst, clk => clk, lux => lux, done => done,
+        c_re => C_RE, c_im => C_IM, z_n_re => z_n_re_holder, z_n_im => z_n_im_holder,
+        z_np1_re => z_np1_re, z_np1_im => z_np1_im
+    );
+    process(clk, nrst)
+    begin
+        if (nrst = '0') then
+            z_n_re_holder <= z_n_re;
+            z_n_im_holder <= z_n_im;
+            cntr <= (others => '0');
+        elsif rising_edge(clk) then
+            cntr <= std_logic_vector(unsigned(cntr) + "1");
+            if(unsigned(cntr) >= Z_COMPUTE_TIME) then
+                cntr <= (others => '0');
+                z_n_re_holder <= z_np1_re;
+                z_n_im_holder <= z_np1_im;
+            end if;
+        end if;
+    end process;
+end Behavioral_encapsulate;
