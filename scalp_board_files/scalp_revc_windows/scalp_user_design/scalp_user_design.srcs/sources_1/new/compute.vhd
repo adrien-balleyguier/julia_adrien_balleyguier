@@ -39,7 +39,6 @@ entity compute is
         c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0); -- 3 bits decimal
         x, y : inout std_logic_vector(9 downto 0);
         watcher : inout std_logic_vector(31 downto 0);
-        watcher_2 : out std_logic_vector(15 downto 0);
         z_np1_re : out std_logic_vector(15 downto 0);
         z_np1_im : out std_logic_vector(15 downto 0) -- 3 bits decimal
     );
@@ -50,37 +49,36 @@ architecture Behavioral of compute is
     signal z_n_re_im_double : std_logic_vector(15 downto 0); -- 3 bits decimal, includes x2
     signal z_n_re_sqrd : std_logic_vector(31 downto 0); -- 6 bits decimal
     signal z_n_im_sqrd : std_logic_vector(31 downto 0); -- 6 bits decimal
-    signal norm : std_logic_vector(5 downto 0); 
+    signal norm : std_logic_vector(31 downto 0); 
     signal z_n_sqrd_sub : std_logic_vector(31 downto 0);
     signal z_n_sqrd_sub_slice : std_logic_vector(15 downto 0); -- 3 bits decimal
     signal cntr : std_logic_vector(8 downto 0);
     signal z_np1_im_delay : std_logic_vector(15 downto 0);
-    constant NORM_DIVERGE : integer range 0 to 7 := 4;
+    constant NORM_DIVERGE : std_logic_vector(31 downto 0) := X"10000000"; -- 4 in 6 bits decimal context
     constant CNTR_LIMIT : integer range 0 to 511 := 300;
 begin
     process(clk, nrst)
     begin
+        watcher <= norm;
         if (nrst = '0') then
             cntr <= (others => '0');
         elsif rising_edge(clk) then
             if not (done = '1') then
                 z_n_re_im <= std_logic_vector(signed(z_n_re) * signed(z_n_im));
                 z_n_re_im_double <= z_n_re_im(27 downto 12);
-                watcher <= std_logic_vector(signed(z_n_re) * signed(z_n_im));
-                watcher_2<= z_n_re_im_double;
                 z_n_re_sqrd <= std_logic_vector(signed(z_n_re) * signed(z_n_re));
                 z_n_im_sqrd <= std_logic_vector(signed(z_n_im) * signed(z_n_im));
                 norm <= std_logic_vector(unsigned(z_n_re_sqrd) + unsigned(z_n_im_sqrd));
                 z_n_sqrd_sub <= std_logic_vector(unsigned(z_n_re_sqrd) - unsigned(z_n_im_sqrd));
-                z_n_sqrd_sub_slice <= z_n_sqrd_sub(31 downto 16);
+                z_n_sqrd_sub_slice <= z_n_sqrd_sub(28 downto 13);
                 cntr <= std_logic_vector(unsigned(cntr) + "1");
                 z_np1_im_delay <= std_logic_vector(signed(z_n_re_im_double) + signed(c_im));
                 -- out
-                if (unsigned(norm) >= NORM_DIVERGE) then
-                    lux <= '0';
+                if (unsigned(norm) >= unsigned(NORM_DIVERGE)) then
+                    lux <= '1';
                     done <= '1';
                 else
-                    lux <= '1';
+                    lux <= '0';
                     if (unsigned(cntr) >= CNTR_LIMIT) then
                         done <= '1';
                     else
