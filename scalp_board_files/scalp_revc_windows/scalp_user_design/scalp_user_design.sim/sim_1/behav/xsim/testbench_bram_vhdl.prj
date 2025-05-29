@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../scalp_user_design.srcs/sources_1/new/bram.vhd" \
-"../../../../scalp_user_design.srcs/sources_1/new/testbench_bram.vhd" \
-
-# Do not sort compile order
-nosort

@@ -130,6 +130,7 @@ begin
             z_n_re_holder <= z_n_re;
             z_n_im_holder <= z_n_im;
             cntr <= (others => '0');
+            saved <= '1';
         elsif rising_edge(clk) then
             cntr <= std_logic_vector(unsigned(cntr) + "1");
             if(unsigned(cntr) >= Z_COMPUTE_TIME) then
