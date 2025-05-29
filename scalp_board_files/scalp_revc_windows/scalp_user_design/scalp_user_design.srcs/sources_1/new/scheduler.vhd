@@ -96,12 +96,12 @@ begin
             if (unsigned(y) < LIMIT_Y) then
                 if (unsigned(x) < (LIMIT_X-1)) then
                     x <= std_logic_vector(unsigned(x) + "1");
-                    z0_re <= std_logic_vector(unsigned(z0_re) + unsigned(step_re));
+                    z0_re <= std_logic_vector(signed(z0_re) + unsigned(step_re));
                 else
                     x <= (others => '0');
                     z0_re <= min_re;
                     y <= std_logic_vector(unsigned(y) + "1");
-                    z0_im <= std_logic_vector(unsigned(z0_im) + unsigned(step_im));
+                    z0_im <= std_logic_vector(signed(z0_im) - unsigned(step_im));
                 end if;
             end if;
         end if;
