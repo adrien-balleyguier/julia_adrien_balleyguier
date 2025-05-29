@@ -38,7 +38,6 @@ entity scheduler is
         y_screen : in std_logic;
         screen_width : in std_logic;
         screen_height : in std_logic;
-        saved : in std_logic;
         z0 : out std_logic;
         x : out std_logic;
         y :out std_logic
@@ -55,7 +54,7 @@ entity coordinate_tracker is
     );
     Port (
         min_re, min_im, screen_width, screen_height : in std_logic_vector(15 downto 0); -- 3 bits decimal
-        nrst, get_next : in std_logic;
+        nrst, n_get_next, clk : in std_logic;
         z0_re, z0_im : inout std_logic_vector(15 downto 0); -- 3 bits decimal
         x, y : inout std_logic_vector(9 downto 0)
     );
@@ -83,7 +82,7 @@ end behave_scheduler;
 architecture behave_coordinate_tracker of coordinate_tracker is
     signal step_re, step_im : std_logic_vector(15 downto 0);
 begin
-    process(nrst, get_next)
+    process(nrst, clk)
     begin
         if nrst = '0' then
             z0_re <= min_re;
@@ -92,16 +91,18 @@ begin
             y <= (others => '0');
             step_re <= std_logic_vector(unsigned(screen_width) / LIMIT_X);
             step_im <= std_logic_vector(unsigned(screen_height) / LIMIT_Y);
-        elsif rising_edge(get_next) then
-            if (unsigned(y) < LIMIT_Y) then
-                if (unsigned(x) < (LIMIT_X-1)) then
-                    x <= std_logic_vector(unsigned(x) + "1");
-                    z0_re <= std_logic_vector(signed(z0_re) + unsigned(step_re));
-                else
-                    x <= (others => '0');
-                    z0_re <= min_re;
-                    y <= std_logic_vector(unsigned(y) + "1");
-                    z0_im <= std_logic_vector(signed(z0_im) - unsigned(step_im));
+        elsif rising_edge(clk) then
+            if n_get_next = '0' then
+                if (unsigned(y) < LIMIT_Y) then
+                    if (unsigned(x) < (LIMIT_X-1)) then
+                        x <= std_logic_vector(unsigned(x) + "1");
+                        z0_re <= std_logic_vector(signed(z0_re) + signed(step_re));
+                    else
+                        x <= (others => '0');
+                        z0_re <= min_re;
+                        y <= std_logic_vector(unsigned(y) + "1");
+                        z0_im <= std_logic_vector(signed(z0_im) - signed(step_im));
+                    end if;
                 end if;
             end if;
         end if;
