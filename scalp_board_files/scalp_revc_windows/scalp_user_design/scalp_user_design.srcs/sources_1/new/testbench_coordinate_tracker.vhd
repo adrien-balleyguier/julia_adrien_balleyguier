@@ -50,14 +50,14 @@ architecture Behavioral of testbench_coordinate_tracker is
         );
         Port (
             min_re, min_im, screen_width, screen_height: in std_logic_vector(15 downto 0);
-            nrst, n_get_next, clk : in std_logic;
+            nrst, get_next, clk : in std_logic;
             z0_re, z0_im : inout std_logic_vector(15 downto 0);
-            x, y : inout std_logic_vector(9 downto 0)
+            pixel_index : inout std_logic_vector(18 downto 0)
         );
     end component;
     signal z0_re, z0_im : std_logic_vector(15 downto 0);
-    signal clk, nrst, n_get_next : std_logic := '0';
-    signal x, y : std_logic_vector(9 downto 0) := (others => '0');
+    signal clk, nrst, get_next : std_logic := '0';
+    signal pixel_index : std_logic_vector(18 downto 0) := (others => '0');
     constant CLK_PERIOD : time := 1 ns;
 begin
     tracker : coordinate_tracker
@@ -67,9 +67,9 @@ begin
         )
         port map(
             min_re => TEST_MIN_RE, min_im => TEST_MIN_IM, screen_width => TEST_STEP_RE, screen_height => TEST_STEP_IM,
-            nrst => nrst, n_get_next => n_get_next, clk => clk,
+            nrst => nrst, get_next => get_next, clk => clk,
             z0_re => z0_re, z0_im => z0_im,
-            x => x, y => y
+            pixel_index => pixel_index
         );
 
     clk_process: process
@@ -91,7 +91,7 @@ begin
     test_process: process
     begin
         wait for CLK_PERIOD;
-        n_get_next <= '0';
+        get_next <= '1';
         for i in 0 to (TEST_LIMIT_X*TEST_LIMIT_Y+10) loop
             wait for CLK_PERIOD;
         end loop;

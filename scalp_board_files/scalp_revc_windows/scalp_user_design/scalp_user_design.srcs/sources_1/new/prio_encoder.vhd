@@ -38,7 +38,7 @@ entity prio_encoder is
     Port ( 
         listener : in std_logic_vector(NB_COMP-1 downto 0);
         selected : out integer range 0 to 31;
-        none_avail : out std_logic
+        avail : out std_logic
     );
 end prio_encoder;
 
@@ -52,9 +52,9 @@ begin
                 selected <= i;
             end if;
             if (unsigned(listener) = 0) then
-                none_avail <= '0';
+                avail <= '0';
             else
-                none_avail <= '1';
+                avail <= '1';
             end if;
         end loop;
     end process;

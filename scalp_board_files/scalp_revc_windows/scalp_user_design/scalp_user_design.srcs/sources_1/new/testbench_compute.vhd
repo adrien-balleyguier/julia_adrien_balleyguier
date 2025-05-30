@@ -55,7 +55,7 @@ architecture Behavioral of testbench_compute is
     component compute is 
         port(
             nrst, clk : in std_logic;
-            done : inout std_logic;
+            saved, done : inout std_logic;
             lux: out std_logic;
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
             z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
@@ -67,7 +67,7 @@ architecture Behavioral of testbench_compute is
 begin
     comp : compute
     port map(
-        nrst => nrst, clk => clk, lux => lux, done => done,
+        nrst => nrst, clk => clk, lux => lux, saved => saved, done => done,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im,
         z_np1_re => z_np1_re, z_np1_im => z_np1_im
     );
@@ -91,8 +91,8 @@ begin
     test_process : process
     begin
         wait for CLK_PERIOD;
-        z_n_re <= TEST_B_RE;
-        z_n_im <= TEST_B_IM;
+        z_n_re <= TEST_D_RE;
+        z_n_im <= TEST_D_IM;
         for i in 0 to NB_ITER_MAX loop
             wait for CLK_PERIOD;
             wait for CLK_PERIOD;

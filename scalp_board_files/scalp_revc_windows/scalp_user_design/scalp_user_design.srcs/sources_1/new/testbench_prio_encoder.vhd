@@ -41,16 +41,16 @@ architecture Behavioral of testbench_prio_encoder is
         port (
             listener : in std_logic_vector(NB_COMP-1  downto 0);
             selected : out integer range 0 to 31;
-            none_avail : out std_logic
+            avail : out std_logic
         );
     end component;
     signal listener : std_logic_vector(NB_COMP-1 downto 0) := "1001011111";
     signal selected : integer range 0 to 31;
-    signal none_avail : std_logic;
+    signal avail : std_logic;
 begin
     prio : prio_encoder
         generic map(NB_COMP => NB_COMP)
-        port map(listener => listener, selected => selected, none_avail => none_avail);
+        port map(listener => listener, selected => selected, avail => avail);
     test_process : process
     begin
         wait;

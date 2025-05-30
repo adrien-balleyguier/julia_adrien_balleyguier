@@ -58,19 +58,19 @@ architecture Behavioral of testbench_compute_encapsulate is
             saved, done : inout std_logic;
             lux: out std_logic;
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
-            x, y : inout std_logic_vector(9 downto 0)
+            pixel_index : inout std_logic_vector(18 downto 0)
         );
     end component;
     signal nrst, clk, saved, lux, done : std_logic;
     signal z_n_re, z_n_im: std_logic_vector(15 downto 0);
-    signal x, y : std_logic_vector (9 downto 0);
+    signal pixel_index : std_logic_vector (18 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
     comp : compute_encapsulate
     port map(
         nrst => nrst, clk => clk, saved => saved, lux => lux, done => done,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im,
-        x => x, y => y
+        pixel_index => pixel_index
     );
 
     clk_process : process
