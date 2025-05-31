@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../scalp_user_design.srcs/sources_1/new/compute.vhd" \
+"../../../../scalp_user_design.srcs/sources_1/new/julia_compute.vhd" \
+"../../../../scalp_user_design.srcs/sources_1/new/prio_encoder.vhd" \
+"../../../../scalp_user_design.srcs/sources_1/new/scheduler.vhd" \
+"../../../../scalp_user_design.srcs/sources_1/new/testbench_julia_compute.vhd" \
+
+# Do not sort compile order
+nosort

@@ -33,7 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity testbench_julia_compute is
     Generic(
-        NB_COMP_BLOCK : integer range 0 to 31 := 1;
+        NB_COMP_BLOCK : integer range 0 to 31 := 8;
         C_RE : std_logic_vector(15 downto 0) := "1111110000010000"; -- -0.123
         C_IM : std_logic_vector(15 downto 0) := "0001011111011111"; -- +0.745
         MIN_RE : std_logic_vector(15 downto 0) := "1100000000000000"; -- -2

@@ -121,6 +121,7 @@ begin
     process(clk, nrst)
     begin
         if nrst = '0' then
+            saved_tab <= (others => '1');
         elsif rising_edge(clk) then
             if ready_avail = '1' then
                 z0_re_tab(ready_selected) <= z0_re;
