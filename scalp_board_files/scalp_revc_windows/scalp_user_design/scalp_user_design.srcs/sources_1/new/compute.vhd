@@ -34,7 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity compute is
     Port ( 
         nrst, clk : in std_logic;
-        saved, done : inout std_logic;
+        done : inout std_logic;
         lux: out std_logic;
         c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0); -- 3 bits decimal
         z_np1_re : out std_logic_vector(15 downto 0);
@@ -48,11 +48,10 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity compute_encapsulate is
     Port(
-        nrst, clk : in std_logic;
-        saved, done : inout std_logic;
-        lux : out std_logic;
-        c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
-        pixel_index : inout std_logic_vector(18 downto 0)
+        nrst, clk, saved : in std_logic;
+        done : inout std_logic;
+        ready, lux : out std_logic;
+        c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0)
     );
 end compute_encapsulate;
 
@@ -73,9 +72,9 @@ begin
     begin
         if (nrst = '0') then
             cntr <= (others => '0');
+            done <= '0';
         elsif rising_edge(clk) then
-            if not (done = '1') then
-                saved <= '0';
+            if done = '0' then
                 z_n_re_im <= std_logic_vector(signed(z_n_re) * signed(z_n_im));
                 z_n_re_im_double <= z_n_re_im(27 downto 12);
                 z_n_re_sqrd <= std_logic_vector(signed(z_n_re) * signed(z_n_re));
@@ -108,7 +107,7 @@ architecture Behavioral_encapsulate of compute_encapsulate is
     component compute is
         Port(
             nrst, clk : in std_logic;
-            saved, done : inout std_logic;
+            done : inout std_logic;
             lux : out std_logic;
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
             z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
@@ -121,7 +120,7 @@ architecture Behavioral_encapsulate of compute_encapsulate is
 begin
     comp : compute
     port map(
-        nrst => nrst, clk => clk, lux => lux, saved => saved, done => done,
+        nrst => nrst, clk => clk, lux => lux, done => done,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re_holder, z_n_im => z_n_im_holder,
         z_np1_re => z_np1_re, z_np1_im => z_np1_im
     );
@@ -131,12 +130,17 @@ begin
             z_n_re_holder <= z_n_re;
             z_n_im_holder <= z_n_im;
             cntr <= (others => '0');
+            ready <= '0';
         elsif rising_edge(clk) then
-            cntr <= std_logic_vector(unsigned(cntr) + "1");
-            if(unsigned(cntr) >= Z_COMPUTE_TIME) then
-                cntr <= (others => '0');
-                z_n_re_holder <= z_np1_re;
-                z_n_im_holder <= z_np1_im;
+            if saved = '1' then
+                ready <= '1';
+            else
+                cntr <= std_logic_vector(unsigned(cntr) + "1");
+                if(unsigned(cntr) >= Z_COMPUTE_TIME) then
+                    cntr <= (others => '0');
+                    z_n_re_holder <= z_np1_re;
+                    z_n_im_holder <= z_np1_im;
+                end if;
             end if;
         end if;
     end process;

@@ -47,7 +47,10 @@ entity testbench_compute is
         TEST_C_IM : std_logic_vector(15 downto 0) := "1111100110011111"; -- -0.1993408203125
         -- expecting test_D to diverge around 95 iterations
         TEST_D_RE : std_logic_vector(15 downto 0) := "1111100001110010"; -- -0.236083984375
-        TEST_D_IM : std_logic_vector(15 downto 0) := "1111011110010011" -- -0.2633056640625
+        TEST_D_IM : std_logic_vector(15 downto 0) := "1111011110010011"; -- -0.2633056640625
+        -- sandbox test_E
+        TEST_E_RE : std_logic_vector(15 downto 0) := "1100000000000000";
+        TEST_E_IM : std_logic_vector(15 downto 0) := "0010000000000000"
     );
 end testbench_compute;
 
@@ -55,19 +58,19 @@ architecture Behavioral of testbench_compute is
     component compute is 
         port(
             nrst, clk : in std_logic;
-            saved, done : inout std_logic;
+            done : inout std_logic;
             lux: out std_logic;
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
             z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
         );
     end component;
-    signal nrst, clk, saved, lux, done : std_logic;
+    signal nrst, clk, lux, done : std_logic;
     signal z_n_re, z_n_im, z_np1_re, z_np1_im : std_logic_vector(15 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
     comp : compute
     port map(
-        nrst => nrst, clk => clk, lux => lux, saved => saved, done => done,
+        nrst => nrst, clk => clk, lux => lux, done => done,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im,
         z_np1_re => z_np1_re, z_np1_im => z_np1_im
     );
@@ -91,8 +94,8 @@ begin
     test_process : process
     begin
         wait for CLK_PERIOD;
-        z_n_re <= TEST_D_RE;
-        z_n_im <= TEST_D_IM;
+        z_n_re <= TEST_E_RE;
+        z_n_im <= TEST_E_IM;
         for i in 0 to NB_ITER_MAX loop
             wait for CLK_PERIOD;
             wait for CLK_PERIOD;
