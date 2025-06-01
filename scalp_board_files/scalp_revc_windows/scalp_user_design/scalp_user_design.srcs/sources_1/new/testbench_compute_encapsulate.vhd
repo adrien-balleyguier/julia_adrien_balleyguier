@@ -48,7 +48,10 @@ entity testbench_compute_encapsulate is
         TEST_C_IM : std_logic_vector(15 downto 0) := "1111100110011111"; -- -0.1993408203125
         -- expecting test_D to diverge around 95 iterations
         TEST_D_RE : std_logic_vector(15 downto 0) := "1111100001110010"; -- -0.236083984375
-        TEST_D_IM : std_logic_vector(15 downto 0) := "1111011110010011" -- -0.2633056640625
+        TEST_D_IM : std_logic_vector(15 downto 0) := "1111011110010011"; -- -0.2633056640625
+        -- other
+        TEST_E_RE : std_logic_vector(15 downto 0) := "1100000000000000"; -- -2
+        TEST_E_IM : std_logic_vector(15 downto 0) := "0010000000000000"  -- +1
     );
 end testbench_compute_encapsulate;
 
@@ -59,7 +62,7 @@ architecture Behavioral of testbench_compute_encapsulate is
         );
         port(
             nrst, clk, saved : in std_logic;
-            done : inout std_logic;
+            done : out std_logic;
             ready: out std_logic;
             lux : out std_logic_vector(NB_COLOR-1 downto 0);
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0)

@@ -868,8 +868,8 @@ begin
                                    HdmiVgaClocksxC.VgaResetxRNA,
                                    HdmiVgaClocksxC.VgaxC) is
             begin  -- process SwissFlagxP
-                hdmi_x <= to_integer(unsigned(VgaPixCountersxD.HxD(NB_BIT_PIXEL downto 0)));
-                hdmi_y <= to_integer(unsigned(VgaPixCountersxD.VxD(NB_BIT_PIXEL downto 0)));
+                hdmi_x <= to_integer(unsigned(VgaPixCountersxD.VxD(NB_BIT_PIXEL downto 0)));
+                hdmi_y <= to_integer(unsigned(VgaPixCountersxD.HxD(NB_BIT_PIXEL downto 0)));
                 addr_r <= std_logic_vector(to_unsigned((hdmi_y * LIMIT_Y) + hdmi_x, addr_r'length));
                 if (HdmiVgaClocksxC.PllLockedxS = '0') or (HdmiVgaClocksxC.VgaResetxRNA = '0') then
                     PixelxD <= C_HDMI_VGA_PIX_IDLE;

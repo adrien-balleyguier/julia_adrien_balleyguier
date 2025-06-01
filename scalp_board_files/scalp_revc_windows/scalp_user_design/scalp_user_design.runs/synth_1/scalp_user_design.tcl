@@ -56,14 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param tcl.collectionResultDisplayLimit 0
 set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 3
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-51-23fd888dc179/incrSyn
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -severity {STATUS}  -suppress 
 set_msg_config  -severity {INFO}  -suppress 
 set_msg_config  -severity {WARNING}  -suppress 

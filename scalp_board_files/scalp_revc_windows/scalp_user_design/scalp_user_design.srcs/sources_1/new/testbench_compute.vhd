@@ -62,21 +62,19 @@ architecture Behavioral of testbench_compute is
         );
         port(
             nrst, clk : in std_logic;
-            done : inout std_logic;
-            lux: out std_logic_vector(NB_COLOR-1 downto 0);
+            diverge : inout std_logic;
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
             z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
         );
     end component;
-    signal nrst, clk, done : std_logic;
-    signal lux : std_logic_vector(NB_COLOR-1 downto 0);
+    signal nrst, clk, diverge : std_logic;
     signal z_n_re, z_n_im, z_np1_re, z_np1_im : std_logic_vector(15 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
     comp : compute
     generic map(NB_COLOR => NB_COLOR)
     port map(
-        nrst => nrst, clk => clk, lux => lux, done => done,
+        nrst => nrst, clk => clk, diverge => diverge,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im,
         z_np1_re => z_np1_re, z_np1_im => z_np1_im
     );
