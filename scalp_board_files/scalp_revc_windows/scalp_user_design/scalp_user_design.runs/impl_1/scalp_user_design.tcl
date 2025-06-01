@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.runs/impl_1/scalp_user_design.tcl"
+  variable script "/home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.runs/impl_1/scalp_user_design.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,6 +97,13 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config  -severity {STATUS}  -suppress 
+set_msg_config  -severity {INFO}  -suppress 
+set_msg_config  -severity {WARNING}  -suppress 
+set_msg_config  -severity {CRITICAL WARNING}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -104,7 +111,11 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param checkpoint.writeSynthRtdsInDcp 1
+  set_param tcl.collectionResultDisplayLimit 0
+  set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 3
+  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-51-23fd888dc179/incrSyn
   set_param runs.launchOptions { -jobs 6  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z015clg485-2
@@ -112,24 +123,24 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.cache/wt [current_project]
-  set_property parent.project_path /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.xpr [current_project]
-  set_property ip_repo_paths /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows [current_project]
+  set_property webtalk.parent_dir /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.cache/wt [current_project]
+  set_property parent.project_path /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.xpr [current_project]
+  set_property ip_repo_paths /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.cache/ip [current_project]
+  set_property ip_output_repo /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.runs/synth_1/scalp_user_design.dcp
+  add_files -quiet /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.runs/synth_1/scalp_user_design.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/scalp_zynqps.bd
+  add_files /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/scalp_zynqps.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.srcs/constrs_1/imports/files/debug.xdc
-  read_xdc /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.srcs/constrs_1/imports/files/scalp_firmware.xdc
-  read_xdc /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_user_design/scalp_user_design.srcs/constrs_1/imports/files/timing_constraints.xdc
+  read_xdc /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.srcs/constrs_1/imports/files/debug.xdc
+  read_xdc /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.srcs/constrs_1/imports/files/scalp_firmware.xdc
+  read_xdc /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_user_design/scalp_user_design.srcs/constrs_1/imports/files/timing_constraints.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

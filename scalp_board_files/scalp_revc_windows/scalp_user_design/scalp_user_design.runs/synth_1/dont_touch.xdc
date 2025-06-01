@@ -7,55 +7,55 @@
 
 # XDC: imports/files/timing_constraints.xdc
 
-# Block Designs: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/scalp_zynqps.bd
+# Block Designs: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/scalp_zynqps.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps || ORIG_REF_NAME==scalp_zynqps} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_gnd_constant_0/scalp_zynqps_gnd_constant_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_gnd_constant_0/scalp_zynqps_gnd_constant_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_gnd_constant_0 || ORIG_REF_NAME==scalp_zynqps_gnd_constant_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_processing_system7_0_0/scalp_zynqps_processing_system7_0_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_processing_system7_0_0/scalp_zynqps_processing_system7_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_processing_system7_0_0 || ORIG_REF_NAME==scalp_zynqps_processing_system7_0_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_scalp_axi_link_firmwareid_0/scalp_zynqps_scalp_axi_link_firmwareid_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_scalp_axi_link_firmwareid_0/scalp_zynqps_scalp_axi_link_firmwareid_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_scalp_axi_link_firmwareid_0 || ORIG_REF_NAME==scalp_zynqps_scalp_axi_link_firmwareid_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_xbar_0/scalp_zynqps_xbar_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_xbar_0/scalp_zynqps_xbar_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_xbar_0 || ORIG_REF_NAME==scalp_zynqps_xbar_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_auto_pc_0/scalp_zynqps_auto_pc_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_auto_pc_0/scalp_zynqps_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_auto_pc_0 || ORIG_REF_NAME==scalp_zynqps_auto_pc_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_ps7_0_axi_periph_0/scalp_zynqps_ps7_0_axi_periph_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_ps7_0_axi_periph_0/scalp_zynqps_ps7_0_axi_periph_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_ps7_0_axi_periph_0 || ORIG_REF_NAME==scalp_zynqps_ps7_0_axi_periph_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_gpio_switches_0/scalp_zynqps_axi_gpio_switches_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_gpio_switches_0/scalp_zynqps_axi_gpio_switches_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_axi_gpio_switches_0 || ORIG_REF_NAME==scalp_zynqps_axi_gpio_switches_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_intc_0_0/scalp_zynqps_axi_intc_0_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_intc_0_0/scalp_zynqps_axi_intc_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_axi_intc_0_0 || ORIG_REF_NAME==scalp_zynqps_axi_intc_0_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_xlconcat_0_0/scalp_zynqps_xlconcat_0_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_xlconcat_0_0/scalp_zynqps_xlconcat_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_xlconcat_0_0 || ORIG_REF_NAME==scalp_zynqps_xlconcat_0_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_gpio_reset_btn_0/scalp_zynqps_axi_gpio_reset_btn_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_gpio_reset_btn_0/scalp_zynqps_axi_gpio_reset_btn_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_axi_gpio_reset_btn_0 || ORIG_REF_NAME==scalp_zynqps_axi_gpio_reset_btn_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_system_ila_0_0/scalp_zynqps_system_ila_0_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_system_ila_0_0/scalp_zynqps_system_ila_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_system_ila_0_0 || ORIG_REF_NAME==scalp_zynqps_system_ila_0_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_scalp_axi_link_cplx_num_regs_0/scalp_zynqps_scalp_axi_link_cplx_num_regs_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_scalp_axi_link_cplx_num_regs_0/scalp_zynqps_scalp_axi_link_cplx_num_regs_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_scalp_axi_link_cplx_num_regs_0 || ORIG_REF_NAME==scalp_zynqps_scalp_axi_link_cplx_num_regs_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_rst_ps7_0_125M_0/scalp_zynqps_rst_ps7_0_125M_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_rst_ps7_0_125M_0/scalp_zynqps_rst_ps7_0_125M_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_rst_ps7_0_125M_0 || ORIG_REF_NAME==scalp_zynqps_rst_ps7_0_125M_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_sys_clock_0/scalp_zynqps_sys_clock_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_sys_clock_0/scalp_zynqps_sys_clock_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_sys_clock_0 || ORIG_REF_NAME==scalp_zynqps_sys_clock_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_iic_ioext_0/scalp_zynqps_axi_iic_ioext_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_iic_ioext_0/scalp_zynqps_axi_iic_ioext_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_axi_iic_ioext_0 || ORIG_REF_NAME==scalp_zynqps_axi_iic_ioext_0} -quiet] -quiet
 
-# IP: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_gpio_joystick_0/scalp_zynqps_axi_gpio_joystick_0.xci
+# IP: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/ip/scalp_zynqps_axi_gpio_joystick_0/scalp_zynqps_axi_gpio_joystick_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==scalp_zynqps_axi_gpio_joystick_0 || ORIG_REF_NAME==scalp_zynqps_axi_gpio_joystick_0} -quiet] -quiet
 
-# XDC: /home/adrien-etude/etude/LPSC/lpsc-main/scalp_board_files-main/scalp_revc_windows/scalp_zynqps/scalp_zynqps_ooc.xdc
+# XDC: /home/adrien-etude/etude/LPSC/lpsc/scalp_board_files/scalp_revc_windows/scalp_zynqps/scalp_zynqps_ooc.xdc

@@ -33,6 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity testbench_compute is
     generic(
+        NB_COLOR : integer range 0 to 15 := 4;
         C_RE : std_logic_vector(15 downto 0) := "1111110000010000"; -- -0.123
         C_IM : std_logic_vector(15 downto 0) := "0001011111011111"; -- +0.745
         NB_ITER_MAX : integer range 0 to 127 := 127; -- computation goes to 100, going a bit more to check behaviour
@@ -56,19 +57,24 @@ end testbench_compute;
 
 architecture Behavioral of testbench_compute is
     component compute is 
+        generic(
+            NB_COLOR : integer range 0 to 15 := 1
+        );
         port(
             nrst, clk : in std_logic;
             done : inout std_logic;
-            lux: out std_logic;
+            lux: out std_logic_vector(NB_COLOR-1 downto 0);
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
             z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
         );
     end component;
-    signal nrst, clk, lux, done : std_logic;
+    signal nrst, clk, done : std_logic;
+    signal lux : std_logic_vector(NB_COLOR-1 downto 0);
     signal z_n_re, z_n_im, z_np1_re, z_np1_im : std_logic_vector(15 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
     comp : compute
+    generic map(NB_COLOR => NB_COLOR)
     port map(
         nrst => nrst, clk => clk, lux => lux, done => done,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im,
@@ -94,8 +100,8 @@ begin
     test_process : process
     begin
         wait for CLK_PERIOD;
-        z_n_re <= TEST_E_RE;
-        z_n_im <= TEST_E_IM;
+        z_n_re <= TEST_B_RE;
+        z_n_im <= TEST_B_IM;
         for i in 0 to NB_ITER_MAX loop
             wait for CLK_PERIOD;
             wait for CLK_PERIOD;

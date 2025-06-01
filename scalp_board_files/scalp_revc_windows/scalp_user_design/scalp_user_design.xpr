@@ -68,7 +68,7 @@
     <Option Name="DSADesignIntentExternalHost" Val="false"/>
     <Option Name="DSADesignIntentEmbedded" Val="true"/>
     <Option Name="DSADesignIntentDatacenter" Val="false"/>
-    <Option Name="WTXSimLaunchSim" Val="332"/>
+    <Option Name="WTXSimLaunchSim" Val="365"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -146,6 +146,36 @@
           <Proxy FileSetName="scalp_zynqps_xbar_0"/>
         </CompFileExtendedInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/bram.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/compute.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/julia_compute.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/prio_encoder.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/scheduler.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/files/scalp_axi_pkg.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="scalp_lib"/>
@@ -155,10 +185,19 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/files/scalp_cplx_num_regs.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/files/scalp_hdmi_pkg.vhd">
         <FileInfo SFType="VHDL2008">
-          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_cplx_num_regs.vhd"/>
-          <Attr Name="ImportTime" Val="1711468971"/>
+          <Attr Name="Library" Val="scalp_lib"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_hdmi_pkg.vhd"/>
+          <Attr Name="ImportTime" Val="1711439167"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/files/scalp_zynqps_user.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_zynqps_user.vhd"/>
+          <Attr Name="ImportTime" Val="1711369193"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -171,11 +210,18 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/files/scalp_hdmi_pkg.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/files/scalp_pwm.vhd">
         <FileInfo SFType="VHDL2008">
-          <Attr Name="Library" Val="scalp_lib"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_hdmi_pkg.vhd"/>
-          <Attr Name="ImportTime" Val="1711439167"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_pwm.vhd"/>
+          <Attr Name="ImportTime" Val="1709809462"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/files/scalp_cplx_num_regs.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_cplx_num_regs.vhd"/>
+          <Attr Name="ImportTime" Val="1711468971"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -236,26 +282,8 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/files/scalp_pwm.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_pwm.vhd"/>
-          <Attr Name="ImportTime" Val="1709809462"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/files/scalp_zynqps_user.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_zynqps_user.vhd"/>
-          <Attr Name="ImportTime" Val="1711369193"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/files/scalp_user_design.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_user_design.vhd"/>
-          <Attr Name="ImportTime" Val="1711437819"/>
+      <File Path="$PSRCDIR/sources_1/new/top.vhd">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -274,20 +302,6 @@
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../files/scalp_cdc_sync.vhd"/>
           <Attr Name="ImportTime" Val="1711380661"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/scheduler.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/compute.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -313,13 +327,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/prio_encoder.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/testbench_prio_encoder.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -327,21 +334,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/bram.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/testbench_bram.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/julia_compute.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -585,9 +578,7 @@
   <Runs Version="1" Minor="22">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z015clg485-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/scalp_user_design.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -757,9 +748,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z015clg485-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 6 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

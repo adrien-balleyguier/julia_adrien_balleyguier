@@ -42,16 +42,16 @@ architecture Behavioral of testbench_bram is
     component bram is
         Generic(
             ELT_SIZE : integer range 0 to 15 := 1;
-            NB_ELT : integer range 0 to 52288 := 514800 -- 720x720
+            NB_ELT : integer range 0 to 524288 := 514800 -- 720x720
         );
         Port(
-            clk_w, clk_r, nrst, we, re : in std_logic := '0';
+            clk_w, clk_r, nrst, we : in std_logic := '0';
             addr_w, addr_r : in std_logic_vector(18 downto 0) := (others => '0');
             data_w : in std_logic_vector(ELT_SIZE-1 downto 0) := (others => '0');
             data_r : out std_logic_vector(ELT_SIZE-1 downto 0) := (others => '0')
         );
     end component;
-    signal clk_w, clk_r, nrst, we, re : std_logic;
+    signal clk_w, clk_r, nrst, we : std_logic;
     signal addr_w, addr_r : std_logic_vector(18 downto 0);
     signal data_w, data_r : std_logic_vector(TEST_ELT_SIZE-1 downto 0);
     constant CLK_W_PERIOD : time := 3 ns;
@@ -60,7 +60,7 @@ begin
     bram_instance : bram
         generic map(ELT_SIZE => TEST_ELT_SIZE, NB_ELT => TEST_NB_ELT)
         port map(
-            clk_w => clk_w, clk_r => clk_r, nrst => nrst, we => we, re => re,
+            clk_w => clk_w, clk_r => clk_r, nrst => nrst, we => we,
             addr_w => addr_w, addr_r => addr_r,
             data_w => data_w, data_r => data_r
         );
@@ -105,9 +105,7 @@ begin
         wait for CLK_W_PERIOD;
         wait for CLK_R_PERIOD;
         addr_r <= "0000000000000000010";
-        re <= '1';
         wait for CLK_R_PERIOD;
-        re <= '0';
         addr_r <= "0000000000000000011";
         wait;
     end process test_r_process;

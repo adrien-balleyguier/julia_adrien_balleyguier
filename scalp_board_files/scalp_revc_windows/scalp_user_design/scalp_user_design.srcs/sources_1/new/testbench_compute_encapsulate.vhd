@@ -33,6 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity testbench_compute_encapsulate is
     generic(
+        NB_COLOR : integer range 0 to 15 := 4;
         C_RE : std_logic_vector(15 downto 0) := "1111110000010000"; -- -0.123
         C_IM : std_logic_vector(15 downto 0) := "0001011111011111"; -- +0.745
         NB_ITER_MAX : integer range 0 to 127 := 127; -- computation goes to 100, going a bit more to check behaviour
@@ -53,18 +54,24 @@ end testbench_compute_encapsulate;
 
 architecture Behavioral of testbench_compute_encapsulate is
     component compute_encapsulate is 
+        generic(
+            NB_COLOR : integer range 0 to 15 := 1
+        );
         port(
             nrst, clk, saved : in std_logic;
             done : inout std_logic;
-            ready, lux: out std_logic;
+            ready: out std_logic;
+            lux : out std_logic_vector(NB_COLOR-1 downto 0);
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0)
         );
     end component;
-    signal nrst, clk, saved, lux, done, ready : std_logic;
+    signal nrst, clk, saved, done, ready : std_logic;
+    signal lux : std_logic_vector(NB_COLOR-1 downto 0);
     signal z_n_re, z_n_im: std_logic_vector(15 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
     comp : compute_encapsulate
+    generic map(NB_COLOR => NB_COLOR)
     port map(
         nrst => nrst, clk => clk, saved => saved, lux => lux, done => done, ready => ready,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im
@@ -88,8 +95,8 @@ begin
 
     test_process : process
     begin
-        z_n_re <= TEST_D_RE;
-        z_n_im <= TEST_D_IM;
+        z_n_re <= TEST_B_RE;
+        z_n_im <= TEST_B_IM;
         wait for CLK_PERIOD;
         for i in 0 to NB_ITER_MAX loop
         end loop;
