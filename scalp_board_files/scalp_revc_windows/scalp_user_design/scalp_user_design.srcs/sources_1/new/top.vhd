@@ -792,8 +792,8 @@ begin
             constant ELT_SIZE : integer range 0 to 15 := 4;
             constant MIN_RE : std_logic_vector(15 downto 0) := "1110000000000000"; -- -1
             constant MIN_IM : std_logic_vector(15 downto 0) := "1110000000000000"; -- -1
-            constant SCREEN_W : std_logic_vector(15 downto 0) := "0100000000000000"; -- +2
-            constant SCREEN_H : std_logic_vector(15 downto 0) := "0100000000000000"; -- +2
+            constant SCREEN_W : std_logic_vector(15 downto 0) := "0000010000000000"; -- +2
+            constant SCREEN_H : std_logic_vector(15 downto 0) := "0000100000000000"; -- +2
             constant C_RE : std_logic_vector(15 downto 0) := "1111110000010000"; -- -0.123
             constant C_IM : std_logic_vector(15 downto 0) := "0001011111011111"; -- +0.745
             constant MAX_PIX_RGB : integer range 0 to 255 := 255;

@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -severity {STATUS}  -suppress 
 set_msg_config  -severity {INFO}  -suppress 
 set_msg_config  -severity {WARNING}  -suppress 
