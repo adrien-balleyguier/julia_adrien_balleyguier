@@ -81,7 +81,7 @@ architecture Behavioral of julia_compute is
             done : inout std_logic;
             ready : out std_logic;
             lux : out std_logic_vector(NB_COLOR-1 downto 0);
-            c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0)
+            c_re, c_im, z0_re, z0_im : in std_logic_vector(15 downto 0)
         );
     end component;
     type z0_re_t is array(NB_COMP_BLOCK-1 downto 0) of std_logic_vector(15 downto 0);
@@ -107,7 +107,7 @@ begin
         generic map(NB_COLOR => NB_COLOR)
         port map(
             nrst => nrst_tab(i), clk => clk, saved => saved_tab(i), lux => lux_tab(i), done => done_tab(i), ready => ready_tab(i),
-            c_re => C_RE, c_im => C_IM, z_n_re => z0_re_tab(i), z_n_im => z0_im_tab(i)
+            c_re => C_RE, c_im => C_IM, z0_re => z0_re_tab(i), z0_im => z0_im_tab(i)
         );
     end generate gen_compute;
     tracker : coordinate_tracker

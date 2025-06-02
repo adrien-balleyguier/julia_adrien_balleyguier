@@ -50,8 +50,8 @@ entity testbench_compute_encapsulate is
         TEST_D_RE : std_logic_vector(15 downto 0) := "1111100001110010"; -- -0.236083984375
         TEST_D_IM : std_logic_vector(15 downto 0) := "1111011110010011"; -- -0.2633056640625
         -- other
-        TEST_E_RE : std_logic_vector(15 downto 0) := "1100000000000000"; -- -2
-        TEST_E_IM : std_logic_vector(15 downto 0) := "0010000000000000"  -- +1
+        TEST_E_RE : std_logic_vector(15 downto 0) := x"c8e6";
+        TEST_E_IM : std_logic_vector(15 downto 0) := x"2000" 
     );
 end testbench_compute_encapsulate;
 
@@ -65,27 +65,27 @@ architecture Behavioral of testbench_compute_encapsulate is
             done : out std_logic;
             ready: out std_logic;
             lux : out std_logic_vector(NB_COLOR-1 downto 0);
-            c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0)
+            c_re, c_im, z0_re, z0_im : in std_logic_vector(15 downto 0)
         );
     end component;
     signal nrst, clk, saved, done, ready : std_logic;
     signal lux : std_logic_vector(NB_COLOR-1 downto 0);
-    signal z_n_re, z_n_im: std_logic_vector(15 downto 0);
+    signal z0_re, z0_im: std_logic_vector(15 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
     comp : compute_encapsulate
     generic map(NB_COLOR => NB_COLOR)
     port map(
         nrst => nrst, clk => clk, saved => saved, lux => lux, done => done, ready => ready,
-        c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im
+        c_re => C_RE, c_im => C_IM, z0_re => z0_re, z0_im => z0_im
     );
 
     clk_process : process
     begin
+        wait for CLK_PERIOD/2;
         clk <= '0';
         wait for CLK_PERIOD/2;
         clk <= '1';
-        wait for CLK_PERIOD/2;
     end process clk_process;
 
     rst_process : process
@@ -98,8 +98,8 @@ begin
 
     test_process : process
     begin
-        z_n_re <= TEST_B_RE;
-        z_n_im <= TEST_B_IM;
+        z0_re <= TEST_B_RE;
+        z0_im <= TEST_B_IM;
         wait for CLK_PERIOD;
         for i in 0 to NB_ITER_MAX loop
         end loop;

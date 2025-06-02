@@ -61,30 +61,30 @@ architecture Behavioral of testbench_compute is
             NB_COLOR : integer range 0 to 15 := 1
         );
         port(
-            nrst, clk : in std_logic;
+            nrst, clk, do_compute : in std_logic;
             diverge : inout std_logic;
             c_re, c_im, z_n_re, z_n_im : in std_logic_vector(15 downto 0);
             z_np1_re, z_np1_im : out std_logic_vector(15 downto 0)
         );
     end component;
-    signal nrst, clk, diverge : std_logic;
+    signal nrst, clk, diverge, do_compute : std_logic;
     signal z_n_re, z_n_im, z_np1_re, z_np1_im : std_logic_vector(15 downto 0);
     constant CLK_PERIOD : time := 1 ns;
 begin
     comp : compute
     generic map(NB_COLOR => NB_COLOR)
     port map(
-        nrst => nrst, clk => clk, diverge => diverge,
+        nrst => nrst, clk => clk, diverge => diverge, do_compute => do_compute,
         c_re => C_RE, c_im => C_IM, z_n_re => z_n_re, z_n_im => z_n_im,
         z_np1_re => z_np1_re, z_np1_im => z_np1_im
     );
 
     clk_process : process
     begin
+        wait for CLK_PERIOD/2;
         clk <= '0';
         wait for CLK_PERIOD/2;
         clk <= '1';
-        wait for CLK_PERIOD/2;
     end process clk_process;
 
     rst_process : process
@@ -98,6 +98,7 @@ begin
     test_process : process
     begin
         wait for CLK_PERIOD;
+        do_compute <= '1';
         z_n_re <= TEST_B_RE;
         z_n_im <= TEST_B_IM;
         for i in 0 to NB_ITER_MAX loop
@@ -106,6 +107,9 @@ begin
             wait for CLK_PERIOD;
             z_n_re <= z_np1_re;
             z_n_im <= z_np1_im;
+            if diverge = '1' then
+                do_compute <= '0';
+            end if;
         end loop;
         wait;
     end process test_process;

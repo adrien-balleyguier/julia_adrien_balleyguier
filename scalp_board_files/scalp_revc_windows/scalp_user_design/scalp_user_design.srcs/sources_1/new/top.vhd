@@ -788,10 +788,10 @@ begin
         end block HdmixB;
 
         ImGenxB : block is
-            constant NB_COMP_BLOCK : integer range 0 to 31 := 1;
+            constant NB_COMP_BLOCK : integer range 0 to 31 := 8;
             constant ELT_SIZE : integer range 0 to 15 := 4;
             constant MIN_RE : std_logic_vector(15 downto 0) := "1110000000000000"; -- -1
-            constant MIN_IM : std_logic_vector(15 downto 0) := "0010000000000000"; -- +1
+            constant MIN_IM : std_logic_vector(15 downto 0) := "1110000000000000"; -- -1
             constant SCREEN_W : std_logic_vector(15 downto 0) := "0100000000000000"; -- +2
             constant SCREEN_H : std_logic_vector(15 downto 0) := "0100000000000000"; -- +2
             constant C_RE : std_logic_vector(15 downto 0) := "1111110000010000"; -- -0.123
@@ -868,8 +868,8 @@ begin
                                    HdmiVgaClocksxC.VgaResetxRNA,
                                    HdmiVgaClocksxC.VgaxC) is
             begin  -- process SwissFlagxP
-                hdmi_x <= to_integer(unsigned(VgaPixCountersxD.VxD(NB_BIT_PIXEL downto 0)));
-                hdmi_y <= to_integer(unsigned(VgaPixCountersxD.HxD(NB_BIT_PIXEL downto 0)));
+                hdmi_x <= to_integer(unsigned(VgaPixCountersxD.HxD(NB_BIT_PIXEL downto 0)));
+                hdmi_y <= to_integer(unsigned(VgaPixCountersxD.VxD(NB_BIT_PIXEL downto 0)));
                 addr_r <= std_logic_vector(to_unsigned((hdmi_y * LIMIT_Y) + hdmi_x, addr_r'length));
                 if (HdmiVgaClocksxC.PllLockedxS = '0') or (HdmiVgaClocksxC.VgaResetxRNA = '0') then
                     PixelxD <= C_HDMI_VGA_PIX_IDLE;

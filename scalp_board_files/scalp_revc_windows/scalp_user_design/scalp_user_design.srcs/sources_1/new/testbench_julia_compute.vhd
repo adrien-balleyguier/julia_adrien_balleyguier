@@ -34,11 +34,11 @@ use IEEE.NUMERIC_STD.ALL;
 entity testbench_julia_compute is
     Generic(
         NB_COLOR : integer range 0 to 15 := 4;
-        NB_COMP_BLOCK : integer range 0 to 31 := 2;
+        NB_COMP_BLOCK : integer range 0 to 31 := 15;
         C_RE : std_logic_vector(15 downto 0) := "1111110000010000"; -- -0.123
         C_IM : std_logic_vector(15 downto 0) := "0001011111011111"; -- +0.745
-        MIN_RE : std_logic_vector(15 downto 0) := "1100000000000000"; -- -2
-        MIN_IM : std_logic_vector(15 downto 0) := "0010000000000000"; -- +1
+        MIN_RE : std_logic_vector(15 downto 0) := "0000000000000000"; -- -2
+        MIN_IM : std_logic_vector(15 downto 0) := "0000000000000000"; -- +1
         SCREEN_H : std_logic_vector(15 downto 0) := "0100000000000000"; -- 2
         SCREEN_W : std_logic_vector(15 downto 0) := "0110000000000000" -- 3
     );

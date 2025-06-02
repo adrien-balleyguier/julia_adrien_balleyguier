@@ -73,7 +73,7 @@ begin
                         y <= y+1;
                         pixel_index <= std_logic_vector(unsigned(pixel_index) + "1");
                         z0_re <= min_re;
-                        z0_im <= std_logic_vector(signed(z0_im) - signed(step_im));
+                        z0_im <= std_logic_vector(signed(z0_im) + signed(step_im));
                     end if;
                 end if;
             end if;
