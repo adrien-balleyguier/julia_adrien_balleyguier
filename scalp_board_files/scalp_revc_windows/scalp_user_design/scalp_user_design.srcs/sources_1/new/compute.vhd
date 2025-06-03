@@ -155,7 +155,7 @@ begin
                     if diverge = '1' or cntr_iter >= NB_MAX_ITER then
                         do_compute <= '0';
                         done <= '1';
-                        lux <= std_logic_vector(to_unsigned((NB_MAX_ITER-cntr_iter)*15/NB_MAX_ITER, lux'length));
+                        lux <= std_logic_vector(to_unsigned((NB_MAX_ITER-cntr_iter)*16/NB_MAX_ITER, lux'length));
                     else
                         cntr_iter <= cntr_iter + 1;
                     end if;
