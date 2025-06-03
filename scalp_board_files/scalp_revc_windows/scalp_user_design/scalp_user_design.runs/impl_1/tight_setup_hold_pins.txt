@@ -10,10 +10,10 @@
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.bram_instance/datas_reg_1_0/WEA[0]                   |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/pixel_tab_reg_0_7_18_18/SP/WE |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/pixel_tab_reg_0_7_18_18/DP/WE |
-| clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/nrst_tab_reg[5]/CE            |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/nrst_tab_reg[2]/CE            |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/nrst_tab_reg[3]/CE            |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/nrst_tab_reg[4]/CE            |
+| clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/nrst_tab_reg[5]/CE            |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/we_reg/D                      |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/nrst_tab_reg[6]/CE            |
 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | clk_vga_vga_hdmi_clk_rst_system_inst_0_vga_hdmi_clock_0 | PLxB.ImGenxB.julia_instance_compute/nrst_tab_reg[7]/CE            |

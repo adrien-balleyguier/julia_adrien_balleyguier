@@ -1,0 +1,46 @@
+\input{declaration}
+
+\begin{document}
+
+    \include{titlepage}
+    % blank page after title page
+    %\newpage\null\thispagestyle{empty}\newpage
+    % restore devault margins after titlepage customization
+    \restoregeometry
+    
+    %special footrule for incipit pages
+    \renewcommand{\footrulewidth}{0.1pt} % default is 0pt
+    \lfoot{Haute école Spécialisée de Suisse Occidentale - Computer Science}
+    \rfoot{Page \thepage \hspace{1pt} / \pageref{page:end_incipit}} 
+    
+    \pagenumbering{Roman}
+    %\include{honor}
+    %\pagebreak
+    %\include{thanks}
+    %\pagebreak
+    %\include{versions}
+    \pagebreak
+    %\include{glossaire}
+    \pagebreak
+    \renewcommand{\contentsname}{Table of Content}
+    \tableofcontents
+    \label{page:end_incipit}
+    \pagebreak
+    
+    \renewcommand{\footrulewidth}{0.1pt} % default is 0pt
+    \lfoot{Haute école Spécialisée de Suisse Occidentale - Computer Science}
+    \rfoot{Page \thepage \hspace{1pt} / \pageref{page:end_redaction}}
+    \addtocounter{page}{-0}
+    \pagenumbering{arabic}
+    \include{main}
+    
+    \renewcommand{\footrulewidth}{0.1pt} % default is 0pt
+    \lfoot{Haute école Spécialisée de Suisse Occidentale - Computer Science}
+    \rfoot{Page \thepage \hspace{1pt} / \pageref{page:count_last_page}}
+    \addtocounter{page}{-0}
+    \pagenumbering{roman}
+    \include{figures_et_tables}
+	%\include{bibliographie}
+    \include{annexes}
+      
+\end{document}

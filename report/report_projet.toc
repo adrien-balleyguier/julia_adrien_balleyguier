@@ -1,0 +1,14 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Description}{1}{section.2}%
+\contentsline {section}{\numberline {3}Achieved work}{1}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Pixel computation}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Mapping between pixel and complex point}{2}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}BRAM}{2}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Priority encoder}{2}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Results}{3}{section.4}%
+\contentsline {section}{\numberline {5}Feature that could be added}{5}{section.5}%
+\contentsline {section}{\numberline {6}Personal feedback on the work}{5}{section.6}%
+\contentsline {section}{\numberline {7}Figures}{i}{section.7}%
+\contentsline {subsection}{\numberline {7.1}{Liste of figures}}{i}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Annexes}{ii}{section.8}%

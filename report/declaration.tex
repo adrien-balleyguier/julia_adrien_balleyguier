@@ -1,0 +1,156 @@
+%-------------------------------------------------------------------------------------------------------
+\documentclass{article}             		% autres choix : letter, book, report
+\usepackage[utf8]{inputenc}         		% encodage du fichier source
+\usepackage[T1]{fontenc}            		% gestion des accents (pour les pdf)
+\usepackage[francais, english]{babel}       % rajouter éventuellement english
+\usepackage{textcomp}              			% caractères additionnels
+\usepackage{amsmath,amssymb}       			% pour les maths
+\usepackage{lmodern}                		% remplacer éventuellement par txfonts, fourier, etc.
+\usepackage[a4paper]{geometry}      		% taille correcte du papier
+\usepackage{graphicx}               		% pour inclure des images
+    \graphicspath{{images/}}     			% spécifier le dossier des images
+\usepackage[table,xcdraw]{xcolor}           % pour gérer les couleurs
+\usepackage{svg}
+\usepackage{microtype}              		% améliorations typographiques
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+%\usepackage{glossaries}
+\usepackage[nopostdot]{glossaries}         % glossaire / lexisque
+\usepackage{lastpage}
+\usepackage{tabularx}
+\def\arraystretch{1.2}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+\usepackage{caption}						% sub figures
+\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{url}							% gestion des URL
+%\usepackage{minted}						% code sytax highlight
+\usepackage{pslatex}    					% utiliser des fontes de caractères postscript pour la compatibilité	
+%\usepackage[a-1b]{pdfx}					% test de compatibilité a1b - il faut aussi ajoute les fichiers
+\usepackage{multicol}						% multiple columns
+\setlength{\columnsep}{0.8cm}				% multicol column separation space
+\usepackage{longtable}                      % table on multiple pages
+\setlength{\LTpost}{10pt}                   % space afer lontable
+\pdfminorversion=7  						% version 1.7
+
+\geometry{hmargin=2.5cm,vmargin=3.0cm}
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}					% profondeur table des matières
+
+% Titre et auteur 
+\title{{LPSC - Julia set report}}
+%\author{Alain Chappuis}
+\author{Adrien Balleyguier}
+\date{\today}
+
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\usepackage{listings}
+\lstdefinestyle{numbers}{numbers=left, stepnumber=5, numberstyle=\tiny, numbersep=10pt}
+\lstdefinestyle{font}{
+    basicstyle=\ttfamily,%\scriptsize,
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false,
+    extendedchars=true,
+    upquote=true,
+    breaklines=true,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.43, 0.5, 0.5},
+    stringstyle=\color[rgb]{0.0,0.5,0.0}
+}
+\lstdefinestyle{frame}{frame=lines}
+\lstdefinestyle{caption}{numberbychapter=false,captionpos=b,caption=\lstname}
+\lstdefinestyle{CStyle}{language=C,style=numbers,style=caption,style=font,style=frame}
+\lstset{language=C}
+%using 'inform' as nameholder for console output style
+\lstdefinestyle{outputStyle}{language=inform,style=frame,style=caption,basicstyle=\ttfamily,keywordstyle=\ttfamily}
+\lstset{language=inform}
+
+\setlength{\doublerulesep}{0pt}
+\newcommand{\thickhline}{\hline\hline\hline}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author 
+\let\thedate\@date
+\usepackage[
+            pdfauthor={\theauthor},
+            pdftitle={\thetitle},
+            pdfproducer={Latex with hyperref},
+            pdfsubject={\thetitle},
+            pdfkeywords={BLE, NFC, encryption, pairing, OOB, ECC},
+            pdfcreator={pdflatex, or other tool}]
+            {hyperref}               		% gestion des hyperliens
+            \hypersetup{
+                colorlinks,
+                citecolor=black,
+                filecolor=black,
+                linkcolor=black,
+                urlcolor=deepblue
+            }
+            \hypersetup{pdfstartview=XYZ}   		% zoom par défaut
+% glossary guimauve
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {3.25ex \@plus1ex \@minus.2ex}%
+                                    {-1em}%
+                                    {\normalfont\normalsize\bfseries}}
+
+\newglossarystyle{modsuper}{
+    \glossarystyle{super}
+    \renewcommand{\glsgroupskip}{}
+}
+\setlength{\glsdescwidth}{0.8\hsize}
+% remove glossary original title
+\renewcommand{\glossarysection}[2][]{} 
+
+% list of figures / tables as subsection
+\renewcommand\listoffigures{%
+	\subsection{{Liste of figures}}%
+	\@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}%
+	\@starttoc{lof}%
+}
+\renewcommand\listoftables{%
+	\subsection{{Liste of tables}}%
+	\@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}%
+	\@starttoc{lot}%
+}
+
+
+% item list
+%\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{\small$\circ$}
+%\renewcommand{\labelitemii}{$\bullet$}
+%\renewcommand{\labelitemiv}{$\bullet$}
+\gdef\lst@numberfirstlinefalse{\global\let\lst@ifnumberfirstline\iffalse}
+\lst@AddToHook{Init}{\global\let\lst@ifnumberfirstline\iftrue}
+\makeglossaries
+
+% Footer and header
+\pagestyle{fancy}
+\fancyhf{}
+
+%\rhead{\theauthor \\ T3-a}
+%\lhead{\thetitle \\ Projet de semestre 5 }
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\rhead{\theauthor\\ \thedate}      % \: pour gros espace
+\lhead{\thetitle \\ \nouppercase{\leftmark} }
+
+
+% Refer to a previously written footnote is to define
+\newcommand{\footnoteref}[1]{\textsuperscript{\ref{#1}}}
+
+%-------------------------------------------------------------------------------------------------------

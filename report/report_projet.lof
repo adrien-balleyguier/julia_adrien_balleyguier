@@ -1,0 +1,10 @@
+\babel@toc {english}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Expected display on the HDMI screen with regards to the displayed area and colour.}}{1}{figure.caption.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces State machine describing the computation state for a given computation block}}{2}{figure.caption.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Computation results for the bottom left point = (-1, -1) with width = 2 and height = 2}}{3}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Computation results for the bottom left point = (0, 0) with width = 1 and height = 1}}{4}{figure.caption.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Computation time [clock ticks] with regards to the amount of computation blocks. This results have been observed in simulation}}{5}{figure.caption.7}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Schematic for the compute block}}{ii}{figure.caption.8}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Schematic for the compute\_encapsulate block}}{iii}{figure.caption.9}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Schematic for the coordinate\_tracker block}}{iv}{figure.caption.10}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Schematic for the coordinate\_tracker block}}{v}{figure.caption.11}%
